@@ -3,7 +3,7 @@ import Kicker from '../atoms/Kicker.astro';
 import SectionHeading from '../atoms/SectionHeading.astro';
 import BodyText from '../atoms/BodyText.astro';
 import TechChipList from '../atoms/TechChipList.astro';
-import { contact, projectName, projectTech, sectionIds } from '../../data/cv';
+import { projectName, projectRepoUrl, projectTech, sectionIds } from '../../data/cv';
 import type { Dictionary } from '../../i18n/types';
 
 interface Props {
@@ -23,7 +23,7 @@ const { t } = Astro.props;
     <div class="project-tech">
       <TechChipList items={projectTech} dark label={t.stackKicker} />
     </div>
-    <p class="repo-link">
+    <a class="repo-link" href={projectRepoUrl} target="_blank" rel="noreferrer">
       <span>{t.projLink}</span>
       <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" focusable="false">
         <path
@@ -31,8 +31,7 @@ const { t } = Astro.props;
           d="M2 0h2v2H2zM4 2h2v2H4zM6 4h2v2H6zM6 6h2v2H6zM4 8h2v2H4zM2 10h2v2H2z"
         ></path>
       </svg>
-      <span class="repo-pending">{contact.githubPlaceholder}</span>
-    </p>
+    </a>
   </div>
 </section>
 
@@ -55,10 +54,8 @@ const { t } = Astro.props;
     color: var(--color-primary-on-dark);
   }
 
-  .repo-pending {
-    font-family: var(--font-label);
-    font-size: 10px;
-    color: var(--color-ink-muted-48);
+  .repo-link:hover {
+    color: var(--color-on-dark);
   }
 
   @media (min-width: 1068px) {

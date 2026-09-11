@@ -440,6 +440,7 @@ Every visual asset is produced one of two ways: **authored in code** (inline SVG
 - **Why it wins**: it recolors per surface (the same mark needs different values on `{colors.canvas}` than on `{colors.surface-tile-1}`), stays crisp at every zoom and export scale, is diffable and editable one line at a time, and costs nothing against the document byte budget.
 - **Fits**: wordmark-and-geometry logos, silhouettes, icons, arrows, rules, dither bands, pixel grids, charts.
 - Pixel-grid art is authored as an ASCII map and compiled to SVG (`src/data/pixel-logos.json` is the single source of art; `src/lib/pixel-logo.ts` compiles it for the site and `design/build-pixel.mjs` for the design canvas), so a correction is a text edit rather than a redraw. Horizontal runs merge into one path per color; set `shape-rendering="crispEdges"`.
+- Marks that need more color depth than the ASCII grid supports live as transparent PNGs under `src/assets/logos/`, registered in `src/assets/logos/index.ts` keyed by file name, rendered as `<img>` by `PixelLogo` alongside the SVG marks, and inlined as base64 by `design/build-pixel.mjs` for the design canvas. A mark used on a dark surface gets an `-on-dark` variant.
 
 ### Generate an image
 

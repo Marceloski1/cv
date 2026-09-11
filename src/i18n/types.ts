@@ -43,8 +43,7 @@ export interface Dictionary {
   eduYear: string;
 
   awardKicker: string;
-  awardTitle: string;
-  awardWhere: string;
+  awards: { title: string; where: string }[];
 
   contactKicker: string;
   contactHead: string;

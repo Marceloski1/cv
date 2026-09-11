@@ -1,17 +1,25 @@
 ---
-import { renderPixelLogo, type PixelLogoName, type PixelPalette } from '../../lib/pixel-logo';
+import { isImageLogo, renderPixelLogo, type LogoName, type PixelPalette } from '../../lib/pixel-logo';
+import { imageLogos } from '../../assets/logos';
 
 interface Props {
-  name: PixelLogoName;
+  name: LogoName;
   size?: number;
   palette?: PixelPalette;
 }
 
 const { name, size = 16, palette } = Astro.props;
-const svg = renderPixelLogo(name, size, palette);
+const isImage = isImageLogo(name);
+const svg = isImage ? null : renderPixelLogo(name, size, palette);
 ---
 
-<span class="pixel-logo" aria-hidden="true" set:html={svg} />
+{
+  isImage ? (
+    <img class="pixel-logo" src={imageLogos[name].src} width={size} height={size} alt="" decoding="async" />
+  ) : (
+    <span class="pixel-logo" aria-hidden="true" set:html={svg} />
+  )
+}
 
 <style>
   .pixel-logo {

@@ -1,12 +1,24 @@
-import { readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const OUT = dirname(fileURLToPath(import.meta.url));
 
 const LOGOS = JSON.parse(readFileSync(join(OUT, '..', 'src', 'data', 'pixel-logos.json'), 'utf8'));
 
+const IMAGE_LOGOS_DIR = join(OUT, '..', 'src', 'assets', 'logos');
+
+const IMAGE_LOGO_DATA = Object.fromEntries(
+  readdirSync(IMAGE_LOGOS_DIR)
+    .filter((file) => extname(file) === '.png')
+    .map((file) => [file.slice(0, -extname(file).length), readFileSync(join(IMAGE_LOGOS_DIR, file)).toString('base64')])
+);
+
 function logo(name, size, overrides) {
+  if (IMAGE_LOGO_DATA[name]) {
+    return '<img src="data:image/png;base64,' + IMAGE_LOGO_DATA[name] +
+      '" width="' + size + '" height="' + size + '" alt="" style="display:block;flex-shrink:0">';
+  }
   const def = LOGOS[name];
   if (!def) throw new Error('unknown logo: ' + name);
   const palette = Object.assign({}, def.palette, overrides || {});
@@ -72,8 +84,8 @@ const AVANGENIO_CHIPS = [
   ['nextjs', 'Next.js 16'],
   ['react', 'React 19'],
   ['tailwind', 'Tailwind 4'],
-  ['generic', 'Turborepo'],
-  ['generic', 'Zod'],
+  ['turborepo', 'Turborepo'],
+  ['zod', 'Zod'],
   ['generic', 'Keycloak'],
 ];
 
@@ -81,7 +93,7 @@ const CUJAE_CHIPS = [
   ['spring', 'Spring Boot 3.4'],
   ['java', 'Java 21'],
   ['mariadb', 'MariaDB'],
-  ['generic', 'Liquibase'],
+  ['liquibase', 'Liquibase'],
   ['docker', 'Docker'],
   ['nginx', 'Nginx'],
 ];
@@ -89,9 +101,9 @@ const CUJAE_CHIPS = [
 const PROJECT_CHIPS = [
   ['hono', 'Hono'],
   ['vercel', 'Vercel AI SDK', { k: '#ffffff' }],
-  ['generic', 'MCP', { p: '#9a9a9a' }],
-  ['sqlite', 'SQLite', { s: '#7fc7e8' }],
-  ['generic', 'Drizzle', { p: '#9a9a9a' }],
+  ['mcp-on-dark', 'MCP'],
+  ['sqlite', 'SQLite'],
+  ['drizzle', 'Drizzle'],
   ['typescript', 'TypeScript'],
 ];
 
@@ -102,12 +114,12 @@ const STACK_GRID = [
   ['nextjs', 'Next.js'],
   ['tailwind', 'Tailwind'],
   ['spring', 'Spring Boot'],
-  ['generic', 'NestJS'],
+  ['nestjs', 'NestJS'],
   ['postgres', 'PostgreSQL'],
   ['mariadb', 'MariaDB'],
   ['docker', 'Docker'],
   ['nginx', 'Nginx'],
-  ['generic', 'GH Actions'],
+  ['github-actions', 'GH Actions'],
 ];
 
 function stackGrid(cols, iconSize) {
@@ -195,6 +207,10 @@ var COPY = {
     awardKicker: 'RECONOCIMIENTO',
     awardTitle: '3.er LUGAR - COPA EULER 2025',
     awardWhere: 'Hackathon celebrado en la CUJAE',
+    awardTitle2: 'IPBC CARIBBEAN QUALIFIER 2025',
+    awardWhere2: 'Participacion en el IPBC Caribbean Qualifier 2025',
+    awardTitle3: 'UNESCO YOUTH HACKATHON 2025',
+    awardWhere3: 'Participacion en la UNESCO Youth Hackathon 2025',
     contactKicker: 'CONTACTO',
     contactHead: 'HABLEMOS DE TU PROXIMO PRODUCTO',
     labelEmail: 'CORREO',
@@ -235,6 +251,10 @@ var COPY = {
     awardKicker: 'RECOGNITION',
     awardTitle: '3RD PLACE - COPA EULER 2025',
     awardWhere: 'Hackathon held at CUJAE',
+    awardTitle2: 'IPBC CARIBBEAN QUALIFIER 2025',
+    awardWhere2: 'Participation in the IPBC Caribbean Qualifier 2025',
+    awardTitle3: 'UNESCO YOUTH HACKATHON 2025',
+    awardWhere3: 'Participation in the UNESCO Youth Hackathon 2025',
     contactKicker: 'CONTACT',
     contactHead: 'LET US TALK ABOUT YOUR NEXT PRODUCT',
     labelEmail: 'EMAIL',
@@ -298,12 +318,37 @@ function expCard(company, roleHole, periodHole, bodyHole, chips, nameSize) {
   );
 }
 
+function awardList(bodySize, titleSize) {
+  const size = titleSize || 11;
+  const items = [
+    ['{{t.awardTitle}}', '{{t.awardWhere}}'],
+    ['{{t.awardTitle2}}', '{{t.awardWhere2}}'],
+    ['{{t.awardTitle3}}', '{{t.awardWhere3}}'],
+  ];
+  return kicker('{{t.awardKicker}}', false) +
+    '<div style="display:flex;flex-direction:column;gap:14px">' +
+    items
+      .map(
+        (item, i) =>
+          '<div style="' + (i > 0 ? 'padding-top:14px;border-top:2px solid #e0e0e0;' : '') + '">' +
+          '<div style="font-family:' + F_PIXEL + ';font-size:' + size + 'px;line-height:1.6;color:' + INK + ';margin-bottom:12px">' + item[0] + '</div>' +
+          body(item[1], false, bodySize) +
+          '</div>'
+      )
+      .join('') +
+    '</div>';
+}
+
+const GITHUB_LABEL = 'github.com/Marceloski1';
+const LINKEDIN_LABEL = 'linkedin.com/in/marcelo-mazzola-b4a33b2a1';
+const PROJECT_REPO_URL = 'https://github.com/Marceloski1/my-local-code';
+
 function contactRows(valueSize) {
   const rows = [
     ['{{t.labelEmail}}', 'pendragonn89@gmail.com', SKY, F_BODY, valueSize],
     ['{{t.labelPhone}}', '+53 55393216', '#ffffff', F_BODY, valueSize],
-    ['GITHUB', '[github.com/usuario]', MUTED, F_LABEL, 10],
-    ['LINKEDIN', '[linkedin.com/in/perfil]', MUTED, F_LABEL, 10],
+    ['GITHUB', GITHUB_LABEL, SKY, F_LABEL, 10],
+    ['LINKEDIN', LINKEDIN_LABEL, SKY, F_LABEL, 10],
     ['{{t.labelLangs}}', '{{t.langsValue}}', '#ffffff', F_BODY, valueSize],
   ];
   return rows
@@ -361,9 +406,9 @@ function mobile() {
     <h2 style="font-family:${F_PIXEL};font-size:15px;font-weight:400;line-height:1.5;margin:0 0 20px;color:#ffffff">LOCAL AI<br>CODING AGENT</h2>
     ${body('{{t.projBody}}', true)}
     <div style="margin:24px 0 28px">${chipRow(PROJECT_CHIPS, true)}</div>
-    <span style="display:inline-flex;align-items:center;gap:8px;font-family:${F_LABEL};font-size:12px;color:${SKY}">{{t.projLink}}
+    <a href="${PROJECT_REPO_URL}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;font-family:${F_LABEL};font-size:12px;color:${SKY}">{{t.projLink}}
       <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" style="display:block"><path fill="${SKY}" d="M2 0h2v2H2zM4 2h2v2H4zM6 4h2v2H6zM6 6h2v2H6zM4 8h2v2H4zM2 10h2v2H2z"/></svg>
-    </span>
+    </a>
   </div>
 
   ${dither('#ffffff', TILE)}
@@ -381,12 +426,7 @@ function mobile() {
         '<div style="font-family:' + F_LABEL + ';font-size:10px;color:' + MUTED + ';margin-top:12px">{{t.eduYear}}</div>',
         false
       )}
-      ${pixelBox(
-        kicker('{{t.awardKicker}}', false) +
-        '<div style="font-family:' + F_PIXEL + ';font-size:11px;line-height:1.6;color:' + INK + ';margin-bottom:12px">{{t.awardTitle}}</div>' +
-        body('{{t.awardWhere}}', false, 19),
-        false
-      )}
+      ${pixelBox(awardList(19), false)}
     </div>
   </div>
 
@@ -471,9 +511,9 @@ function desktop() {
       <h2 style="font-family:${F_PIXEL};font-size:22px;font-weight:400;line-height:1.5;margin:0 0 24px;color:#ffffff">LOCAL AI CODING AGENT</h2>
       <div style="max-width:760px">${body('{{t.projBody}}', true, 22)}</div>
       <div style="margin:28px 0 32px">${chipRow(PROJECT_CHIPS, true)}</div>
-      <span style="display:inline-flex;align-items:center;gap:8px;font-family:${F_LABEL};font-size:13px;color:${SKY}">{{t.projLink}}
+      <a href="${PROJECT_REPO_URL}" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:8px;font-family:${F_LABEL};font-size:13px;color:${SKY}">{{t.projLink}}
         <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" style="display:block"><path fill="${SKY}" d="M2 0h2v2H2zM4 2h2v2H4zM6 4h2v2H6zM6 6h2v2H6zM4 8h2v2H4zM2 10h2v2H2z"/></svg>
-      </span>
+      </a>
     </div>
   </div>
 
@@ -493,12 +533,7 @@ function desktop() {
           '<div style="font-family:' + F_LABEL + ';font-size:11px;color:' + MUTED + ';margin-top:14px">{{t.eduYear}}</div>',
           false
         )}
-        ${pixelBox(
-          kicker('{{t.awardKicker}}', false) +
-          '<div style="font-family:' + F_PIXEL + ';font-size:14px;line-height:1.6;color:' + INK + ';margin-bottom:14px">{{t.awardTitle}}</div>' +
-          body('{{t.awardWhere}}', false, 21),
-          false
-        )}
+        ${pixelBox(awardList(21, 14), false)}
       </div>
     </div>
   </div>

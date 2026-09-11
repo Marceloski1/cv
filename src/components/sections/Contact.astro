@@ -28,11 +28,15 @@ const { t } = Astro.props;
       </div>
       <div class="contact-row">
         <dt>GITHUB</dt>
-        <dd class="pending">{contact.githubPlaceholder}</dd>
+        <dd>
+          <a class="contact-link" href={contact.githubUrl} target="_blank" rel="noreferrer">{contact.githubLabel}</a>
+        </dd>
       </div>
       <div class="contact-row">
         <dt>LINKEDIN</dt>
-        <dd class="pending">{contact.linkedinPlaceholder}</dd>
+        <dd>
+          <a class="contact-link" href={contact.linkedinUrl} target="_blank" rel="noreferrer">{contact.linkedinLabel}</a>
+        </dd>
       </div>
       <div class="contact-row">
         <dt>{t.labelLangs}</dt>
@@ -89,12 +93,6 @@ const { t } = Astro.props;
     color: var(--color-on-dark);
   }
 
-  .contact-row dd.pending {
-    font-family: var(--font-label);
-    font-size: 10px;
-    color: var(--color-ink-muted-48);
-  }
-
   @media (min-width: 834px) {
     .contact-rows {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -109,10 +107,6 @@ const { t } = Astro.props;
 
     .contact-row dd {
       font-size: 22px;
-    }
-
-    .contact-row dd.pending {
-      font-size: 10px;
     }
   }
 </style>

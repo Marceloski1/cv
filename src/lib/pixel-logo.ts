@@ -1,4 +1,5 @@
 import logos from '../data/pixel-logos.json';
+import { imageLogos, type ImageLogoName } from '../assets/logos';
 
 const GRID = 16;
 
@@ -9,11 +10,17 @@ interface PixelLogoDefinition {
 
 export type PixelLogoName = keyof typeof logos;
 
+export type LogoName = PixelLogoName | ImageLogoName;
+
 export type PixelPalette = Record<string, string>;
 
 const registry = logos as Record<string, PixelLogoDefinition>;
 
 export const pixelLogoNames = Object.keys(registry) as PixelLogoName[];
+
+export function isImageLogo(name: string): name is ImageLogoName {
+  return name in imageLogos;
+}
 
 export function compilePixelPaths(definition: PixelLogoDefinition, overrides?: PixelPalette): string {
   const palette = { ...definition.palette, ...overrides };

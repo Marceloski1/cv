@@ -2,7 +2,7 @@ import type { Dictionary } from './types';
 
 export const en: Dictionary = {
   localeName: 'English',
-  documentTitle: 'Eduardo Mazzola / Frontend Developer',
+  documentTitle: 'Marcelo Mazzola / Frontend Developer',
   documentDescription:
     'CV of Eduardo Marcelo Mazzola Fernandez, a frontend developer working in micro-frontend architectures with full stack experience.',
   skipToContent: 'Skip to content',
@@ -17,7 +17,7 @@ export const en: Dictionary = {
   heroKicker: 'HAVANA, CUBA / REMOTE',
   heroFullName: 'Eduardo Marcelo Mazzola Fernandez',
   heroTagline:
-    'I build interfaces inside micro-frontend architectures, with full stack experience in Spring Boot and Clean Architecture.',
+    'I build interfaces inside micro-frontend architectures, with full stack experience and Clean Architecture.',
   ctaPrimary: 'SEE PROJECTS',
   ctaSecondary: 'DOWNLOAD CV',
 
@@ -46,8 +46,11 @@ export const en: Dictionary = {
   eduYear: '[GRADUATION YEAR]',
 
   awardKicker: 'RECOGNITION',
-  awardTitle: '3RD PLACE - COPA EULER 2025',
-  awardWhere: 'Hackathon held at CUJAE',
+  awards: [
+    { title: '3RD PLACE - COPA EULER 2025', where: 'Hackathon held at CUJAE' },
+    { title: 'IPBC CARIBBEAN QUALIFIER 2025', where: 'Participation in the IPBC Caribbean Qualifier 2025' },
+    { title: 'UNESCO YOUTH HACKATHON 2025', where: 'Participation in the UNESCO Youth Hackathon 2025' },
+  ],
 
   contactKicker: 'CONTACT',
   contactHead: 'LET US TALK ABOUT YOUR NEXT PRODUCT',
@@ -58,5 +61,5 @@ export const en: Dictionary = {
   contactCta: 'GET IN TOUCH',
 
   footerLocation: 'Havana, Cuba / Available for remote work',
-  footerLegal: 'Last updated: [DATE]',
+  footerLegal: 'Last updated: SEPTEMBER 2026',
 };

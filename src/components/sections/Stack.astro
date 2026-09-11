@@ -39,8 +39,16 @@ const { t } = Astro.props;
       </PixelBox>
       <PixelBox>
         <Kicker>{t.awardKicker}</Kicker>
-        <h3 class="meta-title">{t.awardTitle}</h3>
-        <BodyText size="compact">{t.awardWhere}</BodyText>
+        <ul class="award-list">
+          {
+            t.awards.map((award) => (
+              <li class="award-item">
+                <h3 class="meta-title">{award.title}</h3>
+                <BodyText size="compact">{award.where}</BodyText>
+              </li>
+            ))
+          }
+        </ul>
       </PixelBox>
     </div>
   </div>
@@ -85,6 +93,20 @@ const { t } = Astro.props;
     grid-template-columns: minmax(0, 1fr);
     gap: 18px;
     margin-top: 34px;
+  }
+
+  .award-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .award-item + .award-item {
+    padding-top: 14px;
+    border-top: 2px solid var(--hairline);
   }
 
   .meta-title {
