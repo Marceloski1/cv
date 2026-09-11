@@ -20,6 +20,7 @@ export interface Dictionary {
   heroTagline: string;
   ctaPrimary: string;
   ctaSecondary: string;
+  cvDownload: { href: string; fileName: string };
 
   expKicker: string;
   expHead: string;

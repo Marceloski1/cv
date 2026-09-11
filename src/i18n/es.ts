@@ -20,6 +20,10 @@ export const es: Dictionary = {
     'Construyo interfaces dentro de arquitecturas de micro-frontends, con recorrido full stack y Clean Architecture.',
   ctaPrimary: 'VER PROYECTOS',
   ctaSecondary: 'DESCARGAR CV',
+  cvDownload: {
+    href: '/cv/eduardo-mazzola-cv-es.docx',
+    fileName: 'CV Eduardo Marcelo Mazzola Fernández.docx',
+  },
 
   expKicker: 'TRAYECTORIA',
   expHead: 'DONDE HE TRABAJADO',

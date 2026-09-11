@@ -24,7 +24,7 @@ const { t } = Astro.props;
       <PixelButton href={`#${sectionIds.project}`} variant="primary" onDark>
         {t.ctaPrimary}
       </PixelButton>
-      <PixelButton href={`#${sectionIds.contact}`} variant="ghost" onDark>
+      <PixelButton href={t.cvDownload.href} download={t.cvDownload.fileName} variant="ghost" onDark>
         {t.ctaSecondary}
       </PixelButton>
     </div>

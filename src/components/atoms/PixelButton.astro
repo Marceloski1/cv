@@ -3,7 +3,7 @@ interface Props {
   href: string;
   variant?: 'primary' | 'ghost';
   onDark?: boolean;
-  download?: boolean;
+  download?: boolean | string;
 }
 
 const { href, variant = 'primary', onDark = false, download = false } = Astro.props;
@@ -11,7 +11,7 @@ const { href, variant = 'primary', onDark = false, download = false } = Astro.pr
 
 <a
   href={href}
-  download={download ? true : undefined}
+  download={download || undefined}
   class:list={['pixel-button', variant, { 'on-dark': onDark }]}
 >
   <slot />

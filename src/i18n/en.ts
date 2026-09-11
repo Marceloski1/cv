@@ -20,6 +20,11 @@ export const en: Dictionary = {
     'I build interfaces inside micro-frontend architectures, with full stack experience and Clean Architecture.',
   ctaPrimary: 'SEE PROJECTS',
   ctaSecondary: 'DOWNLOAD CV',
+  // TODO(cv): point to the English CV once it exists
+  cvDownload: {
+    href: '/cv/eduardo-mazzola-cv-es.docx',
+    fileName: 'CV Eduardo Marcelo Mazzola Fernández.docx',
+  },
 
   expKicker: 'TRACK RECORD',
   expHead: 'WHERE I HAVE WORKED',
