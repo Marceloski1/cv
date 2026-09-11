@@ -1,0 +1,296 @@
+{
+  "vercel": {
+    "palette": { "k": "#1d1d1f" },
+    "map": [
+      "................",
+      "................",
+      ".......kk.......",
+      ".......kk.......",
+      "......kkkk......",
+      "......kkkk......",
+      ".....kkkkkk.....",
+      ".....kkkkkk.....",
+      "....kkkkkkkk....",
+      "....kkkkkkkk....",
+      "...kkkkkkkkkk...",
+      "...kkkkkkkkkk...",
+      "..kkkkkkkkkkkk..",
+      "..kkkkkkkkkkkk..",
+      "................",
+      "................"
+    ]
+  },
+  "nextjs": {
+    "palette": { "k": "#1d1d1f", "w": "#ffffff" },
+    "map": [
+      ".....kkkkkk.....",
+      "...kkkkkkkkkk...",
+      "..kkkkkkkkkkkk..",
+      ".kkkkkkkkkkkkkk.",
+      ".kkkwkkkkkkwkkk.",
+      "kkkkwwkkkkkwkkkk",
+      "kkkkwkwkkkkwkkkk",
+      "kkkkwkkwkkkwkkkk",
+      "kkkkwkkkwkkwkkkk",
+      "kkkkwkkkkwkwkkkk",
+      "kkkkwkkkkkwwkkkk",
+      ".kkkwkkkkkkwkkk.",
+      "..kkkkkkkkkkkk..",
+      "...kkkkkkkkkk...",
+      ".....kkkkkk.....",
+      "................"
+    ]
+  },
+  "react": {
+    "palette": { "c": "#61dafb" },
+    "map": [
+      "................",
+      "................",
+      "......cccc......",
+      ".....c....c.....",
+      "..cccc....cccc..",
+      ".c...c....c...c.",
+      ".c....c..c....c.",
+      ".c....cccc....c.",
+      ".c....cccc....c.",
+      ".c....c..c....c.",
+      ".c...c....c...c.",
+      "..cccc....cccc..",
+      ".....c....c.....",
+      "......cccc......",
+      "................",
+      "................"
+    ]
+  },
+  "tailwind": {
+    "palette": { "c": "#38bdf8" },
+    "map": [
+      "................",
+      "................",
+      "................",
+      "..cccc....cccc..",
+      ".cc..cc..cc..cc.",
+      ".cc...cccc...cc.",
+      ".cc....cc....cc.",
+      "..cccc....cccc..",
+      "....cccc....cccc",
+      "...cc..cc..cc..c",
+      "...cc...cccc...c",
+      "...cc....cc....c",
+      "....cccc....cccc",
+      "................",
+      "................",
+      "................"
+    ]
+  },
+  "typescript": {
+    "palette": { "b": "#3178c6", "w": "#ffffff" },
+    "map": [
+      "bbbbbbbbbbbbbbbb",
+      "bbbbbbbbbbbbbbbb",
+      "bbbbbbbbbbbbbbbb",
+      "bbwwwwwbbbbbbbbb",
+      "bbbbwbbbbwwwwwbb",
+      "bbbbwbbbbwbbbbbb",
+      "bbbbwbbbbwwwwbbb",
+      "bbbbwbbbbbbbbwbb",
+      "bbbbwbbbbbbbbwbb",
+      "bbbbwbbbbwwwwbbb",
+      "bbbbbbbbbbbbbbbb",
+      "bbbbbbbbbbbbbbbb",
+      "bbbbbbbbbbbbbbbb",
+      "bbbbbbbbbbbbbbbb",
+      "bbbbbbbbbbbbbbbb",
+      "bbbbbbbbbbbbbbbb"
+    ]
+  },
+  "java": {
+    "palette": { "r": "#e76f00", "b": "#5382a1" },
+    "map": [
+      "................",
+      "....r..r..r.....",
+      "...r..r..r......",
+      "....r..r..r.....",
+      "...r..r..r......",
+      "................",
+      ".bbbbbbbbbbbb...",
+      ".b..........b.bb",
+      ".b..........b.b.",
+      ".b..........b.b.",
+      ".b..........bbb.",
+      ".b..........b...",
+      "..b........b....",
+      "...bbbbbbbb.....",
+      "................",
+      "................"
+    ]
+  },
+  "spring": {
+    "palette": { "g": "#6db33f" },
+    "map": [
+      "................",
+      "............gg..",
+      "..........gggg..",
+      "........gggggg..",
+      "......gggggggg..",
+      ".....ggggggggg..",
+      "....gggggggggg..",
+      "...ggggggggggg..",
+      "...gggggggggg...",
+      "..gggggggggg....",
+      "..ggggggggg.....",
+      "..gggggggg......",
+      "..ggggg.........",
+      "..gg............",
+      "................",
+      "................"
+    ]
+  },
+  "docker": {
+    "palette": { "b": "#2496ed" },
+    "map": [
+      "................",
+      "......bb........",
+      "......bb........",
+      "..bb..bb..bb....",
+      "..bb..bb..bb....",
+      "..bbbbbbbbbb....",
+      "..bbbbbbbbbb..b.",
+      "bbbbbbbbbbbbbbb.",
+      ".bbbbbbbbbbbbbb.",
+      "..bbbbbbbbbbbb..",
+      "...bbbbbbbbbb...",
+      "................",
+      "................",
+      "................",
+      "................",
+      "................"
+    ]
+  },
+  "postgres": {
+    "palette": { "b": "#336791" },
+    "map": [
+      "................",
+      "...bbbbbbbbbb...",
+      "..bbbbbbbbbbbb..",
+      ".bbbbbbbbbbbbbb.",
+      ".bb.bbbbbbbb.bb.",
+      ".bbbbbbbbbbbbbb.",
+      ".bbbbbbbbbbbbbb.",
+      "..bbbbbbbbbbbb..",
+      "...bbbbbbbbbb...",
+      "....bbb..bbb....",
+      "....bbb..bbbb...",
+      "....bbb....bb...",
+      "....bbb....bb...",
+      "...........bb...",
+      "................",
+      "................"
+    ]
+  },
+  "mariadb": {
+    "palette": { "t": "#1f8a9c" },
+    "map": [
+      "................",
+      "................",
+      "...tttttttttt...",
+      "..t..........t..",
+      "...tttttttttt...",
+      "..t..........t..",
+      "..t..........t..",
+      "...tttttttttt...",
+      "..t..........t..",
+      "..t..........t..",
+      "...tttttttttt...",
+      "..t..........t..",
+      "..t..........t..",
+      "...tttttttttt...",
+      "................",
+      "................"
+    ]
+  },
+  "nginx": {
+    "palette": { "g": "#009639" },
+    "map": [
+      "................",
+      ".gg..........gg.",
+      ".gg..........gg.",
+      ".ggg.........gg.",
+      ".gggg........gg.",
+      ".gg.gg.......gg.",
+      ".gg..gg......gg.",
+      ".gg...gg.....gg.",
+      ".gg....gg....gg.",
+      ".gg.....gg...gg.",
+      ".gg......gg..gg.",
+      ".gg.......gg.gg.",
+      ".gg........gggg.",
+      ".gg.........ggg.",
+      ".gg..........gg.",
+      "................"
+    ]
+  },
+  "sqlite": {
+    "palette": { "s": "#0f5c82" },
+    "map": [
+      "................",
+      "............sss.",
+      "..........sss...",
+      ".........sss....",
+      ".......ssss.....",
+      "......ssss......",
+      "....sssss.......",
+      "...sssss........",
+      "..sssss.........",
+      ".sssss..........",
+      "..sss...........",
+      "...ss...........",
+      "....s...........",
+      "................",
+      "................",
+      "................"
+    ]
+  },
+  "hono": {
+    "palette": { "r": "#ff5b11" },
+    "map": [
+      "................",
+      ".......rr.......",
+      ".......rr.......",
+      "......rrrr......",
+      ".....rrrrrr.....",
+      ".....rrrrrr.....",
+      "....rrrrrrrr....",
+      "....rrr..rrrr...",
+      "...rrr....rrrr..",
+      "...rr......rrr..",
+      "..rrr.......rrr.",
+      "..rrr..rr...rrr.",
+      "..rrr.rrrr..rrr.",
+      "...rrrrrrrrrrr..",
+      "....rrrrrrrrr...",
+      "................"
+    ]
+  },
+  "generic": {
+    "palette": { "p": "#7a7a7a" },
+    "map": [
+      "................",
+      "................",
+      "................",
+      ".......pp.......",
+      "......pppp......",
+      ".....pp..pp.....",
+      "....pp....pp....",
+      "...pp......pp...",
+      "...pp......pp...",
+      "....pp....pp....",
+      ".....pp..pp.....",
+      "......pppp......",
+      ".......pp.......",
+      "................",
+      "................",
+      "................"
+    ]
+  }
+}

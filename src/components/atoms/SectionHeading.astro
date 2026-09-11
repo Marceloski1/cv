@@ -1,0 +1,43 @@
+---
+interface Props {
+  id?: string;
+  onDark?: boolean;
+  tight?: boolean;
+}
+
+const { id, onDark = false, tight = false } = Astro.props;
+---
+
+<h2 id={id} class:list={['section-heading', { 'on-dark': onDark, tight }]}>
+  <slot />
+</h2>
+
+<style>
+  .section-heading {
+    font-family: var(--font-pixel);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 26px;
+    color: var(--color-ink);
+  }
+
+  .section-heading.tight {
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
+  .section-heading.on-dark {
+    color: var(--color-on-dark);
+  }
+
+  @media (min-width: 1068px) {
+    .section-heading {
+      font-size: 22px;
+    }
+
+    .section-heading.tight {
+      margin-bottom: 36px;
+      max-width: 800px;
+    }
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import PixelBox from '../atoms/PixelBox.astro';
+import BodyText from '../atoms/BodyText.astro';
+import TechChipList from '../atoms/TechChipList.astro';
+import type { TechItem } from '../../data/cv';
+
+interface Props {
+  company: string;
+  role: string;
+  period: string;
+  summary: string;
+  tech: TechItem[];
+  techLabel: string;
+}
+
+const { company, role, period, summary, tech, techLabel } = Astro.props;
+---
+
+<PixelBox as="article">
+  <div class="card-head">
+    <h3 class="company">{company}</h3>
+    <p class="role">{role}</p>
+    <p class="period">{period}</p>
+  </div>
+  <BodyText>{summary}</BodyText>
+  <div class="card-tech">
+    <TechChipList items={tech} label={techLabel} />
+  </div>
+</PixelBox>
+
+<style>
+  .card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .company {
+    font-family: var(--font-pixel);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-ink);
+  }
+
+  .role {
+    font-family: var(--font-label);
+    font-size: 11px;
+    color: var(--color-primary);
+  }
+
+  .period {
+    font-family: var(--font-label);
+    font-size: 10px;
+    color: var(--color-ink-muted-48);
+  }
+
+  .card-tech {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 1068px) {
+    .company {
+      font-size: 16px;
+    }
+  }
+</style>

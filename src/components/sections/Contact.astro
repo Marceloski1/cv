@@ -1,0 +1,118 @@
+---
+import Kicker from '../atoms/Kicker.astro';
+import SectionHeading from '../atoms/SectionHeading.astro';
+import PixelButton from '../atoms/PixelButton.astro';
+import { contact, sectionIds } from '../../data/cv';
+import type { Dictionary } from '../../i18n/types';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section id={sectionIds.contact} class="tile tile-dark-3" aria-labelledby="contact-heading">
+  <div class="tile-inner">
+    <Kicker onDark>{t.contactKicker}</Kicker>
+    <SectionHeading id="contact-heading" onDark tight>{t.contactHead}</SectionHeading>
+
+    <dl class="contact-rows">
+      <div class="contact-row">
+        <dt>{t.labelEmail}</dt>
+        <dd><a class="contact-link" href={`mailto:${contact.email}`}>{contact.email}</a></dd>
+      </div>
+      <div class="contact-row">
+        <dt>{t.labelPhone}</dt>
+        <dd><a class="contact-plain" href={`tel:${contact.phoneHref}`}>{contact.phone}</a></dd>
+      </div>
+      <div class="contact-row">
+        <dt>GITHUB</dt>
+        <dd class="pending">{contact.githubPlaceholder}</dd>
+      </div>
+      <div class="contact-row">
+        <dt>LINKEDIN</dt>
+        <dd class="pending">{contact.linkedinPlaceholder}</dd>
+      </div>
+      <div class="contact-row">
+        <dt>{t.labelLangs}</dt>
+        <dd class="plain">{t.langsValue}</dd>
+      </div>
+    </dl>
+
+    <PixelButton href={`mailto:${contact.email}`} variant="primary" onDark>
+      {t.contactCta}
+    </PixelButton>
+  </div>
+</section>
+
+<style>
+  .contact-rows {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 0 0 32px;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 2px solid var(--pixel-rule-dark);
+  }
+
+  .contact-row dt {
+    font-family: var(--font-label);
+    font-size: 10px;
+    color: var(--color-body-muted);
+  }
+
+  .contact-row dd {
+    margin: 0;
+    text-align: right;
+    font-family: var(--font-body);
+    font-size: 20px;
+  }
+
+  .contact-link {
+    color: var(--color-primary-on-dark);
+  }
+
+  .contact-link:hover {
+    color: var(--color-on-dark);
+  }
+
+  .contact-plain,
+  .contact-row dd.plain {
+    color: var(--color-on-dark);
+  }
+
+  .contact-row dd.pending {
+    font-family: var(--font-label);
+    font-size: 10px;
+    color: var(--color-ink-muted-48);
+  }
+
+  @media (min-width: 834px) {
+    .contact-rows {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 44px;
+    }
+  }
+
+  @media (min-width: 1068px) {
+    .contact-rows {
+      margin-bottom: 40px;
+    }
+
+    .contact-row dd {
+      font-size: 22px;
+    }
+
+    .contact-row dd.pending {
+      font-size: 10px;
+    }
+  }
+</style>

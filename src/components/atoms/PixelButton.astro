@@ -1,0 +1,65 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'ghost';
+  onDark?: boolean;
+  download?: boolean;
+}
+
+const { href, variant = 'primary', onDark = false, download = false } = Astro.props;
+---
+
+<a
+  href={href}
+  download={download ? true : undefined}
+  class:list={['pixel-button', variant, { 'on-dark': onDark }]}
+>
+  <slot />
+</a>
+
+<style>
+  .pixel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--touch-min);
+    padding: 0 18px;
+    border: 3px solid var(--color-ink);
+    box-shadow: 4px 4px 0 var(--color-ink);
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .pixel-button.on-dark {
+    border-color: var(--color-on-dark);
+    box-shadow: 4px 4px 0 var(--surface-black);
+  }
+
+  .pixel-button.primary {
+    background: var(--color-primary);
+    color: var(--color-on-dark);
+  }
+
+  .pixel-button.primary:hover {
+    color: var(--color-on-dark);
+  }
+
+  .pixel-button.ghost {
+    background: transparent;
+    color: var(--color-primary);
+  }
+
+  .pixel-button.ghost.on-dark {
+    color: var(--color-primary-on-dark);
+  }
+
+  .pixel-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--color-ink);
+  }
+
+  .pixel-button.on-dark:active {
+    box-shadow: 2px 2px 0 var(--surface-black);
+  }
+</style>

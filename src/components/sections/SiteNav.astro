@@ -1,0 +1,165 @@
+---
+import { locales, localeHref, dictionaries, type Locale } from '../../i18n';
+import { monogram, sectionIds } from '../../data/cv';
+import type { Dictionary } from '../../i18n/types';
+
+interface Props {
+  t: Dictionary;
+  locale: Locale;
+}
+
+const { t, locale } = Astro.props;
+
+const navLinks = [
+  { href: `#${sectionIds.experience}`, label: t.navExp },
+  { href: `#${sectionIds.project}`, label: t.navProj },
+  { href: `#${sectionIds.stack}`, label: t.navStack },
+  { href: `#${sectionIds.contact}`, label: t.navContact },
+];
+---
+
+<nav class="site-nav">
+  <div class="site-nav-group">
+    <span class="monogram">{monogram}</span>
+    <ul class="section-links">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <ul class="locale-list" aria-label={t.languageNavLabel}>
+    {
+      locales.map((code) => (
+        <li>
+          <a
+            href={localeHref(code)}
+            hreflang={code}
+            lang={code}
+            class:list={['locale-pill', { active: code === locale }]}
+            aria-current={code === locale ? 'true' : undefined}
+          >
+            <span class="sr-only">{dictionaries[code].localeName}</span>
+            <span aria-hidden="true">{code.toUpperCase()}</span>
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <span class="locale-pill pending" title={t.moreLanguagesLabel} aria-hidden="true">+</span>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--surface-black);
+    padding: 6px 14px;
+    min-height: 56px;
+  }
+
+  .site-nav-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .monogram {
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    color: var(--color-on-dark);
+  }
+
+  .section-links {
+    display: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .section-links a {
+    font-family: var(--font-label);
+    font-size: 12px;
+    color: var(--color-on-dark);
+  }
+
+  .section-links a:hover {
+    color: var(--color-primary-on-dark);
+  }
+
+  .locale-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .locale-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--touch-min);
+    padding: 0 13px;
+    border: 2px solid var(--color-on-dark);
+    box-shadow: 2px 2px 0 var(--surface-black);
+    font-family: var(--font-label);
+    font-size: 12px;
+    background: var(--color-ink);
+    color: var(--color-ink-muted-48);
+  }
+
+  .locale-pill:hover {
+    color: var(--color-on-dark);
+  }
+
+  .locale-pill.active {
+    background: var(--color-primary);
+    color: var(--color-on-dark);
+  }
+
+  .locale-pill.pending {
+    border-style: dashed;
+    border-color: var(--pixel-border-dark);
+    background: transparent;
+    box-shadow: none;
+    padding: 0 11px;
+    color: var(--color-ink-muted-48);
+  }
+
+  @media (min-width: 1068px) {
+    .site-nav {
+      gap: 24px;
+      padding: 10px 40px;
+      min-height: 0;
+    }
+
+    .monogram {
+      font-size: 13px;
+    }
+
+    .section-links {
+      display: flex;
+    }
+
+    .locale-pill {
+      min-height: 0;
+      height: 34px;
+      padding: 0 12px;
+    }
+
+    .locale-pill.pending {
+      padding: 0 10px;
+    }
+  }
+</style>

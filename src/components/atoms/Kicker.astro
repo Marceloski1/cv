@@ -1,0 +1,25 @@
+---
+interface Props {
+  onDark?: boolean;
+}
+
+const { onDark = false } = Astro.props;
+---
+
+<p class:list={['kicker', { 'on-dark': onDark }]}>
+  <slot />
+</p>
+
+<style>
+  .kicker {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-muted-48);
+    margin-bottom: 14px;
+  }
+
+  .kicker.on-dark {
+    color: var(--color-body-muted);
+  }
+</style>

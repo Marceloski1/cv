@@ -1,0 +1,22 @@
+---
+import { renderPixelLogo, type PixelLogoName, type PixelPalette } from '../../lib/pixel-logo';
+
+interface Props {
+  name: PixelLogoName;
+  size?: number;
+  palette?: PixelPalette;
+}
+
+const { name, size = 16, palette } = Astro.props;
+const svg = renderPixelLogo(name, size, palette);
+---
+
+<span class="pixel-logo" aria-hidden="true" set:html={svg} />
+
+<style>
+  .pixel-logo {
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+  }
+</style>

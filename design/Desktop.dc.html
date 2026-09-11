@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { color: #0071e3; }
+  </style>
+</helmet>
+<div style="width: 1440px; min-height: 3000px; background: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Inter, system-ui, sans-serif; font-feature-settings: 'ss03'; color: #1d1d1f; -webkit-font-smoothing: antialiased;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #000000; height: 44px; padding: 0 40px; box-sizing: border-box;">
+    <div style="display: flex; align-items: center; gap: 28px;">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: -0.12px; color: #ffffff;">EMMF</span>
+      <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #ffffff;">{{t.navExp}}</span>
+      <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #ffffff;">{{t.navProj}}</span>
+      <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #ffffff;">{{t.navStack}}</span>
+      <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #ffffff;">{{t.navContact}}</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="{{esStyle}}" onClick="{{setEs}}">ES</span>
+      <span style="{{enStyle}}" onClick="{{setEn}}">EN</span>
+      <span style="display: flex; align-items: center; justify-content: center; height: 32px; padding: 0 11px; border-radius: 8px; border: 1px dashed #333333; color: #7a7a7a; font-size: 12px; letter-spacing: -0.12px;">+</span>
+    </div>
+  </div>
+
+  <div style="background: #272729; padding: 80px 40px; color: #ffffff;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 14px; letter-spacing: 0.04em; color: #cccccc; margin-bottom: 24px;">{{t.heroKicker}}</div>
+      <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; font-size: 56px; font-weight: 600; line-height: 1.07; letter-spacing: -0.28px; margin: 0 0 24px; max-width: 820px; text-wrap: pretty;">{{t.heroName}}</h1>
+      <p style="font-size: 28px; font-weight: 400; line-height: 1.14; letter-spacing: 0.196px; color: #ffffff; margin: 0 0 40px; max-width: 760px; text-wrap: pretty;">{{t.heroTagline}}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <span style="display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 9999px; background: #0066cc; color: #ffffff; font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">{{t.ctaPrimary}}</span>
+        <span style="display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 9999px; background: transparent; border: 1px solid #2997ff; color: #2997ff; font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; box-sizing: border-box;">{{t.ctaSecondary}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #f5f5f7; padding: 80px 40px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 14px; letter-spacing: 0.04em; color: #7a7a7a; margin-bottom: 14px;">{{t.expKicker}}</div>
+      <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; font-size: 40px; font-weight: 600; line-height: 1.1; letter-spacing: 0; margin: 0 0 48px;">{{t.expHead}}</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+
+        <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 18px; padding: 24px; display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 10px;">
+            <span style="font-size: 21px; font-weight: 600; line-height: 1.19; letter-spacing: 0.231px;">Avangenio</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #7a7a7a; border-bottom: 1px dashed #cccccc; white-space: nowrap; padding-bottom: 1px;">{{t.period1}}</span>
+          </div>
+          <span style="font-size: 14px; font-weight: 600; line-height: 1.29; letter-spacing: -0.224px; color: #0066cc; margin-bottom: 16px;">{{t.role1}}</span>
+          <p style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; color: #333333; margin: 0 0 24px;">{{t.body1}}</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto;">
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Next.js 16</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">React 19</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Tailwind 4</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Turborepo</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Zod</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Keycloak</span>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 18px; padding: 24px; display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 10px;">
+            <span style="font-size: 21px; font-weight: 600; line-height: 1.19; letter-spacing: 0.231px;">CUJAE</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #7a7a7a; border-bottom: 1px dashed #cccccc; white-space: nowrap; padding-bottom: 1px;">{{t.period2}}</span>
+          </div>
+          <span style="font-size: 14px; font-weight: 600; line-height: 1.29; letter-spacing: -0.224px; color: #0066cc; margin-bottom: 16px;">{{t.role2}}</span>
+          <p style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; color: #333333; margin: 0 0 24px;">{{t.body2}}</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto;">
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Spring Boot 3.4</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Java 21</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">MariaDB</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Liquibase</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Docker</span>
+            <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #333333; background: #fafafc; border: 1px solid #f0f0f0; border-radius: 8px; padding: 6px 10px;">Nginx</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #272729; padding: 80px 40px; color: #ffffff;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 14px; letter-spacing: 0.04em; color: #cccccc; margin-bottom: 20px;">{{t.projKicker}}</div>
+      <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; font-size: 40px; font-weight: 600; line-height: 1.1; letter-spacing: 0; margin: 0 0 24px;">Local AI Coding Agent</h2>
+      <p style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; color: #cccccc; margin: 0 0 32px; max-width: 720px;">{{t.projBody}}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 32px;">
+        <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #ffffff; background: #2a2a2c; border-radius: 8px; padding: 6px 10px;">Hono</span>
+        <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #ffffff; background: #2a2a2c; border-radius: 8px; padding: 6px 10px;">Vercel AI SDK</span>
+        <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #ffffff; background: #2a2a2c; border-radius: 8px; padding: 6px 10px;">MCP</span>
+        <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #ffffff; background: #2a2a2c; border-radius: 8px; padding: 6px 10px;">SQLite</span>
+        <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #ffffff; background: #2a2a2c; border-radius: 8px; padding: 6px 10px;">Drizzle</span>
+        <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #ffffff; background: #2a2a2c; border-radius: 8px; padding: 6px 10px;">TypeScript</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; color: #2997ff;">{{t.projLink}}</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2997ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #ffffff; padding: 80px 40px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 14px; letter-spacing: 0.04em; color: #7a7a7a; margin-bottom: 14px;">{{t.stackKicker}}</div>
+      <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; font-size: 40px; font-weight: 600; line-height: 1.1; letter-spacing: 0; margin: 0 0 48px;">{{t.stackHead}}</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-bottom: 56px;">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+          <span style="font-size: 14px; font-weight: 400; line-height: 1.43; letter-spacing: -0.224px; color: #7a7a7a;">{{t.stackLangs}}</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">TypeScript · Java</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+          <span style="font-size: 14px; font-weight: 400; line-height: 1.43; letter-spacing: -0.224px; color: #7a7a7a;">Frontend</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">React · Next.js · Tailwind</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+          <span style="font-size: 14px; font-weight: 400; line-height: 1.43; letter-spacing: -0.224px; color: #7a7a7a;">Backend</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">Spring Boot · NestJS</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+          <span style="font-size: 14px; font-weight: 400; line-height: 1.43; letter-spacing: -0.224px; color: #7a7a7a;">{{t.stackData}}</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">PostgreSQL · MariaDB</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+          <span style="font-size: 14px; font-weight: 400; line-height: 1.43; letter-spacing: -0.224px; color: #7a7a7a;">{{t.stackInfra}}</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">Docker · Nginx · Actions</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+          <span style="font-size: 14px; font-weight: 400; line-height: 1.43; letter-spacing: -0.224px; color: #7a7a7a;">{{t.labelLangs}}</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">{{t.langsValue}}</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 24px; border-top: 1px solid #e0e0e0;">
+          <div style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.04em; color: #7a7a7a;">{{t.eduKicker}}</div>
+          <span style="font-size: 21px; font-weight: 600; line-height: 1.19; letter-spacing: 0.231px;">{{t.eduDegree}}</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; color: #333333;">Universidad Tecnológica de La Habana José Antonio Echeverría</span>
+          <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #7a7a7a; border-bottom: 1px dashed #cccccc; align-self: flex-start; padding-bottom: 1px;">{{t.eduYear}}</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 24px; border-top: 1px solid #e0e0e0;">
+          <div style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.04em; color: #7a7a7a;">{{t.awardKicker}}</div>
+          <span style="font-size: 21px; font-weight: 600; line-height: 1.19; letter-spacing: 0.231px;">{{t.awardTitle}}</span>
+          <span style="font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px; color: #333333;">{{t.awardWhere}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #252527; padding: 80px 40px; color: #ffffff;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 14px; letter-spacing: 0.04em; color: #cccccc; margin-bottom: 20px;">{{t.contactKicker}}</div>
+      <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; font-size: 40px; font-weight: 600; line-height: 1.1; letter-spacing: 0; margin: 0 0 48px; max-width: 700px; text-wrap: pretty;">{{t.contactHead}}</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; margin-bottom: 48px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid #333333;">
+          <span style="font-size: 14px; font-weight: 400; letter-spacing: -0.224px; color: #cccccc;">{{t.labelEmail}}</span>
+          <span style="font-size: 17px; font-weight: 400; letter-spacing: -0.374px; color: #2997ff;">pendragonn89@gmail.com</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid #333333;">
+          <span style="font-size: 14px; font-weight: 400; letter-spacing: -0.224px; color: #cccccc;">{{t.labelPhone}}</span>
+          <span style="font-size: 17px; font-weight: 400; letter-spacing: -0.374px;">+53 55393216</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid #333333;">
+          <span style="font-size: 14px; font-weight: 400; letter-spacing: -0.224px; color: #cccccc;">GitHub</span>
+          <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #7a7a7a; border-bottom: 1px dashed #333333; padding-bottom: 1px;">[github.com/usuario]</span>
+        </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid #333333;">
+          <span style="font-size: 14px; font-weight: 400; letter-spacing: -0.224px; color: #cccccc;">LinkedIn</span>
+          <span style="font-family: 'SF Mono', ui-monospace, SFMono-Regular, 'JetBrains Mono', Menlo, monospace; font-size: 12px; letter-spacing: -0.12px; color: #7a7a7a; border-bottom: 1px dashed #333333; padding-bottom: 1px;">[linkedin.com/in/perfil]</span>
+        </div>
+      </div>
+
+      <span style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: 9999px; background: #0066cc; color: #ffffff; font-size: 17px; font-weight: 400; line-height: 1.47; letter-spacing: -0.374px;">{{t.contactCta}}</span>
+    </div>
+  </div>
+
+  <div style="background: #f5f5f7; padding: 64px 40px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; margin-bottom: 32px;">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 14px; font-weight: 600; line-height: 1.29; letter-spacing: -0.224px; color: #1d1d1f;">Eduardo Marcelo Mazzola Fernández</span>
+          <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #7a7a7a;">{{t.footerLocation}}</span>
+        </div>
+        <div style="display: flex; gap: 40px;">
+          <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #333333;">{{t.navExp}}</span>
+          <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #333333;">{{t.navProj}}</span>
+          <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #333333;">{{t.navStack}}</span>
+          <span style="font-size: 12px; font-weight: 400; letter-spacing: -0.12px; color: #333333;">{{t.navContact}}</span>
+        </div>
+      </div>
+      <div style="height: 1px; background: #e0e0e0; margin-bottom: 24px;"></div>
+      <span style="font-size: 12px; font-weight: 400; line-height: 1.3; letter-spacing: -0.12px; color: #7a7a7a;">{{t.footerLegal}}</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":3000}}'>
+var PILL_BASE = 'display:flex;align-items:center;justify-content:center;height:32px;padding:0 13px;border-radius:8px;font-size:12px;letter-spacing:-0.12px;cursor:pointer;';
+var PILL_ON = PILL_BASE + 'background:#0071e3;color:#ffffff;font-weight:600;';
+var PILL_OFF = PILL_BASE + 'background:#1d1d1f;color:#ffffff;font-weight:400;';
+
+var COPY = {
+  es: {
+    navExp: 'Experiencia',
+    navProj: 'Proyectos',
+    navStack: 'Stack',
+    navContact: 'Contacto',
+    heroKicker: 'La Habana, Cuba — disponible en remoto',
+    heroName: 'Eduardo Marcelo Mazzola Fernández',
+    heroTagline: 'Construyo interfaces dentro de arquitecturas de micro-frontends, con recorrido full stack en Spring Boot y Clean Architecture.',
+    ctaPrimary: 'Ver proyectos',
+    ctaSecondary: 'Descargar CV',
+    expKicker: 'Trayectoria',
+    expHead: 'Dónde he trabajado',
+    role1: 'Desarrollador Frontend',
+    period1: '[MES AAAA — ACTUAL]',
+    body1: 'Frontend de eTravelBeyond, plataforma de viajes con micro-frontends Multi-Zones sobre un monorepo TypeScript. Paquetes internos de UI, autenticación y navegación compartidos entre aplicaciones, SSO con Keycloak y feature flags para liberar por partes.',
+    role2: 'Programador Full Stack',
+    period2: '[MES AAAA — MES AAAA]',
+    body2: 'Sobrecarga Docente, sistema de gestión de carga académica del profesorado, construido de extremo a extremo: Clean Architecture en el backend, migraciones versionadas y la aplicación completa empaquetada en contenedores.',
+    projKicker: 'Proyecto propio',
+    projBody: 'Línea de comandos que orquesta modelos de lenguaje ejecutándose 100 % en local, sin depender de APIs externas. Model Context Protocol para exponer herramientas al modelo, persistencia en SQLite y una interfaz de terminal propia.',
+    projLink: 'Ver el repositorio',
+    stackKicker: 'Herramientas',
+    stackHead: 'Con qué construyo',
+    stackLangs: 'Lenguajes',
+    stackData: 'Datos',
+    stackInfra: 'Infraestructura',
+    eduKicker: 'Formación',
+    eduDegree: 'Ingeniería Informática',
+    eduYear: '[AÑO DE GRADUACIÓN]',
+    awardKicker: 'Reconocimiento',
+    awardTitle: 'Tercer lugar, Copa Euler 2025',
+    awardWhere: 'Hackathon celebrado en la CUJAE',
+    contactKicker: 'Contacto',
+    contactHead: 'Hablemos de tu próximo producto.',
+    labelEmail: 'Correo',
+    labelPhone: 'Teléfono',
+    labelLangs: 'Idiomas',
+    langsValue: 'Español nativo · Inglés B1',
+    contactCta: 'Escríbeme',
+    footerLocation: 'La Habana, Cuba · Disponible en remoto',
+    footerLegal: 'Hecho con cuidado. Última actualización: [FECHA].'
+  },
+  en: {
+    navExp: 'Experience',
+    navProj: 'Projects',
+    navStack: 'Stack',
+    navContact: 'Contact',
+    heroKicker: 'Havana, Cuba — available for remote work',
+    heroName: 'Eduardo Marcelo Mazzola Fernández',
+    heroTagline: 'I build interfaces inside micro-frontend architectures, with full stack experience in Spring Boot and Clean Architecture.',
+    ctaPrimary: 'See projects',
+    ctaSecondary: 'Download CV',
+    expKicker: 'Track record',
+    expHead: 'Where I have worked',
+    role1: 'Frontend Developer',
+    period1: '[MONTH YYYY — PRESENT]',
+    body1: 'Frontend for eTravelBeyond, a travel platform built on Multi-Zones micro-frontends inside a TypeScript monorepo. Shared internal packages for UI, authentication and navigation across apps, SSO through Keycloak, and feature flags for staged releases.',
+    role2: 'Full Stack Developer',
+    period2: '[MONTH YYYY — MONTH YYYY]',
+    body2: 'Sobrecarga Docente, an academic workload management system for university faculty, built end to end: Clean Architecture on the backend, versioned migrations, and the whole application shipped in containers.',
+    projKicker: 'Personal project',
+    projBody: 'A command-line tool that orchestrates language models running entirely on the local machine, with no external APIs. Model Context Protocol exposes tools to the model, SQLite handles persistence, and it ships with its own terminal interface.',
+    projLink: 'View the repository',
+    stackKicker: 'Tooling',
+    stackHead: 'What I build with',
+    stackLangs: 'Languages',
+    stackData: 'Data',
+    stackInfra: 'Infrastructure',
+    eduKicker: 'Education',
+    eduDegree: 'Computer Engineering',
+    eduYear: '[GRADUATION YEAR]',
+    awardKicker: 'Recognition',
+    awardTitle: 'Third place, Copa Euler 2025',
+    awardWhere: 'Hackathon held at CUJAE',
+    contactKicker: 'Contact',
+    contactHead: 'Let us talk about your next product.',
+    labelEmail: 'Email',
+    labelPhone: 'Phone',
+    labelLangs: 'Languages',
+    langsValue: 'Native Spanish · English B1',
+    contactCta: 'Get in touch',
+    footerLocation: 'Havana, Cuba · Available for remote work',
+    footerLegal: 'Built with care. Last updated: [DATE].'
+  }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lang: 'es' };
+  }
+  renderVals() {
+    var lang = this.state.lang === 'en' ? 'en' : 'es';
+    var self = this;
+    return {
+      t: COPY[lang],
+      esStyle: lang === 'es' ? PILL_ON : PILL_OFF,
+      enStyle: lang === 'en' ? PILL_ON : PILL_OFF,
+      setEs: function () { self.setState({ lang: 'es' }); },
+      setEn: function () { self.setState({ lang: 'en' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

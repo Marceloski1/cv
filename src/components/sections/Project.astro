@@ -1,0 +1,77 @@
+---
+import Kicker from '../atoms/Kicker.astro';
+import SectionHeading from '../atoms/SectionHeading.astro';
+import BodyText from '../atoms/BodyText.astro';
+import TechChipList from '../atoms/TechChipList.astro';
+import { contact, projectName, projectTech, sectionIds } from '../../data/cv';
+import type { Dictionary } from '../../i18n/types';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section id={sectionIds.project} class="tile tile-dark" aria-labelledby="project-heading">
+  <div class="tile-inner">
+    <Kicker onDark>{t.projKicker}</Kicker>
+    <SectionHeading id="project-heading" onDark>
+      <span class="name-line">{projectName[0]}</span> <span class="name-line">{projectName[1]}</span>
+    </SectionHeading>
+    <BodyText onDark constrained>{t.projBody}</BodyText>
+    <div class="project-tech">
+      <TechChipList items={projectTech} dark label={t.stackKicker} />
+    </div>
+    <p class="repo-link">
+      <span>{t.projLink}</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" focusable="false">
+        <path
+          fill="currentColor"
+          d="M2 0h2v2H2zM4 2h2v2H4zM6 4h2v2H6zM6 6h2v2H6zM4 8h2v2H4zM2 10h2v2H2z"
+        ></path>
+      </svg>
+      <span class="repo-pending">{contact.githubPlaceholder}</span>
+    </p>
+  </div>
+</section>
+
+<style>
+  .name-line {
+    display: block;
+  }
+
+  .project-tech {
+    margin: 24px 0 28px;
+  }
+
+  .repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: var(--touch-min);
+    font-family: var(--font-label);
+    font-size: 12px;
+    color: var(--color-primary-on-dark);
+  }
+
+  .repo-pending {
+    font-family: var(--font-label);
+    font-size: 10px;
+    color: var(--color-ink-muted-48);
+  }
+
+  @media (min-width: 1068px) {
+    .name-line {
+      display: inline;
+    }
+
+    .project-tech {
+      margin: 28px 0 32px;
+    }
+
+    .repo-link {
+      font-size: 13px;
+    }
+  }
+</style>

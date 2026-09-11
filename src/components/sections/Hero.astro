@@ -1,0 +1,95 @@
+---
+import Kicker from '../atoms/Kicker.astro';
+import BodyText from '../atoms/BodyText.astro';
+import PixelButton from '../atoms/PixelButton.astro';
+import { heroNameLines, sectionIds } from '../../data/cv';
+import type { Dictionary } from '../../i18n/types';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="tile tile-dark hero">
+  <div class="tile-inner">
+    <Kicker onDark>{t.heroKicker}</Kicker>
+    <h1 class="hero-name">
+      {heroNameLines[0]}<br />{heroNameLines[1]}
+    </h1>
+    <p class="hero-full-name">{t.heroFullName}</p>
+    <BodyText onDark size="lead" constrained>{t.heroTagline}</BodyText>
+    <div class="hero-actions">
+      <PixelButton href={`#${sectionIds.project}`} variant="primary" onDark>
+        {t.ctaPrimary}
+      </PixelButton>
+      <PixelButton href={`#${sectionIds.contact}`} variant="ghost" onDark>
+        {t.ctaSecondary}
+      </PixelButton>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 44px;
+    padding-bottom: 52px;
+  }
+
+  .hero-name {
+    font-family: var(--font-pixel);
+    font-size: 26px;
+    line-height: 1.35;
+    margin-bottom: 16px;
+    color: var(--color-on-dark);
+  }
+
+  .hero-full-name {
+    font-family: var(--font-label);
+    font-size: 11px;
+    color: var(--color-body-muted);
+    margin-bottom: 22px;
+  }
+
+  .hero :global(.body-text.lead) {
+    margin-bottom: 30px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  @media (min-width: 640px) {
+    .hero-name {
+      font-size: 34px;
+    }
+  }
+
+  @media (min-width: 1068px) {
+    .hero {
+      padding-top: 72px;
+      padding-bottom: 80px;
+    }
+
+    .hero-name {
+      font-size: 48px;
+      margin-bottom: 22px;
+    }
+
+    .hero-full-name {
+      font-size: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero :global(.body-text.lead) {
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      gap: 18px;
+    }
+  }
+</style>

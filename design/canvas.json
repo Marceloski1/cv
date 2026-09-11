@@ -1,0 +1,39 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Pixel art" },
+    { "id": "page-2", "name": "Refinado (anterior)" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Pixel — Móvil 390px", "x": 0, "y": 0, "w": 390, "h": 3400, "page": "page-1", "is_interactive": true },
+    { "file": "DesktopPixel.dc.html", "title": "Pixel — Escritorio 1440px", "x": 530, "y": 0, "w": 1440, "h": 3200, "page": "page-1", "is_interactive": true },
+    { "file": "MobileClean.dc.html", "title": "Refinado — Móvil 390px", "x": 0, "y": 0, "w": 390, "h": 2900, "page": "page-2", "is_interactive": true },
+    { "file": "Desktop.dc.html", "title": "Refinado — Escritorio 1440px", "x": 530, "y": 0, "w": 1440, "h": 3000, "page": "page-2", "is_interactive": true }
+  ],
+  "annotations": [
+    {
+      "id": "pixel-tension",
+      "x": 0,
+      "y": -560,
+      "w": 700,
+      "page": "page-1",
+      "text": "PIXEL ART CONTRA DESIGN.MD — LO QUE CEDIÓ CADA UNO\n\nEsto no es una evolución de la versión refinada: es una dirección opuesta. La guía pide que el chrome desaparezca, SF Pro con tracking negativo, y reserva su única sombra a la fotografía. El pixel art necesita justo lo contrario. Tres reglas de la guía se rompen a propósito:\n\n· Sombras planas de 4-5px en tarjetas, chips y botones. La guía dice \"never on cards, never on buttons\". Sin ellas no hay pixel art: la sombra dura ES el lenguaje.\n\n· Tipografía bitmap. Press Start 2P en titulares, Silkscreen en etiquetas, VT323 en cuerpo. El cuerpo va a 20-22px porque VT323 monta pequeño; a 17px sería ilegible.\n\n· Bandas de tramado (dithering) como separador de secciones, en lugar del cambio limpio de superficie.\n\nLo que SÍ conservé de la guía, y es lo que evita que esto parezca un juego cualquiera: la paleta exacta (tiles #272729 / #252527, pergamino #f5f5f7, un único acento #0066cc y #2997ff sobre oscuro), el ritmo de tiles a sangre, radio 0 en todo, y el suelo táctil de 44px."
+    },
+    {
+      "id": "pixel-logos",
+      "x": 0,
+      "y": 3480,
+      "w": 700,
+      "page": "page-1",
+      "text": "LOS LOGOS\n\nEstán dibujados por mí en rejilla de 16×16 y generados con un script (tools/build-pixel.mjs), donde cada logo es un mapa ASCII. No son los SVG oficiales de cada marca: son renditions en pixel art. Para un CV eso es uso nominativo normal, y dibujarlos evita empaquetar assets de marca ajenos.\n\nTrece dibujados de verdad: Next.js, React, Tailwind, TypeScript, Java, Spring, Docker, PostgreSQL, Nginx, SQLite, Hono, Vercel y MariaDB.\n\nOcho marcados con un rombo neutro en lugar de un logo: Turborepo, Zod, Keycloak, Liquibase, MCP, Drizzle, NestJS y GitHub Actions. A 16×16 esas marcas no son reconocibles, y un intento fallido se lee peor que un marcador honesto. Si quieres alguno de verdad, dime cuál y lo dibujo con más rejilla.\n\nMariaDB es un cilindro de base de datos estilizado: su león marino no sobrevive a 16 píxeles.\n\nUNA ADVERTENCIA REAL: al exportar PNG o PDF, las fuentes de Google no se incrustan y el texto cae a una monoespaciada genérica. En pixel art eso se nota mucho más que en la versión refinada. Si el CV se va a repartir en PDF, la versión refinada aguanta mejor ese camino."
+    },
+    {
+      "id": "refinado-nota",
+      "x": 0,
+      "y": -300,
+      "w": 620,
+      "page": "page-2",
+      "text": "LA VERSIÓN QUE TE GUSTÓ, INTACTA\n\nEsta es la que aprobaste, sin tocar: DESIGN.md aplicado al pie, móvil primero, conmutador ES / EN funcional.\n\nQueda aquí como referencia y como salida segura. Si el CV va a circular en PDF o ante reclutadores no técnicos, esta es la que recomiendo mandar.\n\nAmbas páginas comparten el mismo contenido y los mismos huecos entre corchetes, así que puedes decidir más tarde sin rehacer texto."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

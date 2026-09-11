@@ -1,0 +1,27 @@
+---
+interface Props {
+  dark?: boolean;
+  as?: 'div' | 'article' | 'li';
+}
+
+const { dark = false, as: Tag = 'div' } = Astro.props;
+---
+
+<Tag class:list={['pixel-box', { dark }]}>
+  <slot />
+</Tag>
+
+<style>
+  .pixel-box {
+    background: var(--canvas);
+    border: 3px solid var(--color-ink);
+    box-shadow: 5px 5px 0 var(--color-ink);
+    padding: 20px;
+  }
+
+  .pixel-box.dark {
+    background: var(--color-ink);
+    border-color: var(--pixel-border-dark);
+    box-shadow: 5px 5px 0 var(--surface-black);
+  }
+</style>

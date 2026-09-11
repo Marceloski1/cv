@@ -1,0 +1,40 @@
+---
+import PixelLogo from './PixelLogo.astro';
+import type { PixelLogoName, PixelPalette } from '../../lib/pixel-logo';
+
+interface Props {
+  logo: PixelLogoName;
+  label: string;
+  palette?: PixelPalette;
+  dark?: boolean;
+}
+
+const { logo, label, palette, dark = false } = Astro.props;
+---
+
+<li class:list={['tech-chip', { dark }]}>
+  <PixelLogo name={logo} size={16} palette={palette} />
+  <span>{label}</span>
+</li>
+
+<style>
+  .tech-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--canvas);
+    border: 2px solid var(--color-ink);
+    box-shadow: 2px 2px 0 var(--color-ink);
+    padding: 5px 8px;
+    font-family: var(--font-label);
+    font-size: 11px;
+    color: var(--color-ink);
+  }
+
+  .tech-chip.dark {
+    background: var(--color-ink);
+    border-color: var(--pixel-border-dark);
+    box-shadow: 2px 2px 0 var(--surface-black);
+    color: var(--color-on-dark);
+  }
+</style>

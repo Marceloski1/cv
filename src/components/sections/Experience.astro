@@ -1,0 +1,66 @@
+---
+import Kicker from '../atoms/Kicker.astro';
+import SectionHeading from '../atoms/SectionHeading.astro';
+import ExperienceCard from './ExperienceCard.astro';
+import { avangenioTech, companies, cujaeTech, sectionIds } from '../../data/cv';
+import type { Dictionary } from '../../i18n/types';
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+
+const roles = [
+  {
+    company: companies.avangenio,
+    role: t.role1,
+    period: t.period1,
+    summary: t.body1,
+    tech: avangenioTech,
+  },
+  {
+    company: companies.cujae,
+    role: t.role2,
+    period: t.period2,
+    summary: t.body2,
+    tech: cujaeTech,
+  },
+];
+---
+
+<section id={sectionIds.experience} class="tile tile-parchment" aria-labelledby="experience-heading">
+  <div class="tile-inner">
+    <Kicker>{t.expKicker}</Kicker>
+    <SectionHeading id="experience-heading">{t.expHead}</SectionHeading>
+    <div class="experience-grid">
+      {
+        roles.map((entry) => (
+          <ExperienceCard
+            company={entry.company}
+            role={entry.role}
+            period={entry.period}
+            summary={entry.summary}
+            tech={entry.tech}
+            techLabel={`${t.stackKicker} - ${entry.company}`}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  @media (min-width: 834px) {
+    .experience-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+    }
+  }
+</style>

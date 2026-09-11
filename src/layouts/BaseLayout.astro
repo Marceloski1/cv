@@ -1,0 +1,44 @@
+---
+import '../styles/tokens.css';
+import { locales, localeHref, type Locale } from '../i18n';
+import type { Dictionary } from '../i18n/types';
+
+interface Props {
+  t: Dictionary;
+  locale: Locale;
+}
+
+const { t, locale } = Astro.props;
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{t.documentTitle}</title>
+    <meta name="description" content={t.documentDescription} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    {
+      locales.map((code) => (
+        <link
+          rel="alternate"
+          hreflang={code}
+          href={Astro.site ? new URL(localeHref(code), Astro.site).href : localeHref(code)}
+        />
+      ))
+    }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.skipToContent}</a>
+    <slot />
+  </body>
+</html>

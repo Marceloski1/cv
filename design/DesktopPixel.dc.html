@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { color: #0071e3; }
+    svg { image-rendering: pixelated; }
+  </style>
+</helmet>
+<div style="width:1440px;min-height:3200px;background:#f5f5f7;font-family:VT323, ui-monospace, monospace;color:#1d1d1f">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#000000;padding:10px 40px;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:30px">
+      <span style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:13px;color:#ffffff">EMMF</span>
+      <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:12px;color:#ffffff">{{t.navExp}}</span>
+      <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:12px;color:#ffffff">{{t.navProj}}</span>
+      <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:12px;color:#ffffff">{{t.navStack}}</span>
+      <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:12px;color:#ffffff">{{t.navContact}}</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span style="{{esStyle}}height:34px;padding:0 12px" onClick="{{setEs}}">ES</span>
+      <span style="{{enStyle}}height:34px;padding:0 12px" onClick="{{setEn}}">EN</span>
+      <span style="display:flex;align-items:center;justify-content:center;height:34px;padding:0 10px;border:2px dashed #4a4a4c;font-family:Silkscreen, ui-monospace, monospace;font-size:12px;color:#7a7a7a">+</span>
+    </div>
+  </div>
+
+  <div style="height:10px;background-color:#272729;background-image:linear-gradient(45deg,#000000 25%,transparent 25%,transparent 75%,#000000 75%),linear-gradient(45deg,#000000 25%,transparent 25%,transparent 75%,#000000 75%);background-size:10px 10px;background-position:0 0,5px 5px"></div>
+
+  <div style="background:#272729;padding:72px 40px 80px;color:#ffffff">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;letter-spacing:0.06em;color:#cccccc;margin-bottom:14px">{{t.heroKicker}}</div>
+      <h1 style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:48px;font-weight:400;line-height:1.35;margin:0 0 22px;color:#ffffff">EDUARDO<br>MAZZOLA</h1>
+      <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:14px;color:#cccccc;margin-bottom:26px">{{t.heroFullName}}</div>
+      <p style="font-family:VT323, ui-monospace, monospace;font-size:27px;line-height:1.3;margin:0 0 36px;max-width:760px;color:#ffffff">{{t.heroTagline}}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:18px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;background:#0066cc;color:#ffffff;border:3px solid #ffffff;box-shadow:4px 4px 0 #000000;font-family:'Press Start 2P', ui-monospace, monospace;font-size:10px;line-height:1.6">{{t.ctaPrimary}}</span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;background:transparent;color:#2997ff;border:3px solid #ffffff;box-shadow:4px 4px 0 #000000;font-family:'Press Start 2P', ui-monospace, monospace;font-size:10px;line-height:1.6">{{t.ctaSecondary}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:10px;background-color:#f5f5f7;background-image:linear-gradient(45deg,#272729 25%,transparent 25%,transparent 75%,#272729 75%),linear-gradient(45deg,#272729 25%,transparent 25%,transparent 75%,#272729 75%);background-size:10px 10px;background-position:0 0,5px 5px"></div>
+
+  <div style="background:#f5f5f7;padding:72px 40px">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;letter-spacing:0.06em;color:#7a7a7a;margin-bottom:14px">{{t.expKicker}}</div>
+      <h2 style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:22px;font-weight:400;line-height:1.5;margin:0 0 26px;color:#1d1d1f">{{t.expHead}}</h2>
+      <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:26px">
+        <div style="background:#ffffff;border:3px solid #1d1d1f;box-shadow:5px 5px 0 #1d1d1f;padding:20px"><div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px"><span style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:16px;line-height:1.5;color:#1d1d1f">AVANGENIO</span><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#0066cc">{{t.role1}}</span><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#7a7a7a">{{t.period1}}</span></div><p style="font-family:VT323, ui-monospace, monospace;font-size:20px;line-height:1.35;margin:0;color:#333333">{{t.body1}}</p><div style="margin-top:20px"><div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#1d1d1f" d="M5 0h6v1h-6zM3 1h10v1h-10zM2 2h12v1h-12zM1 3h14v1h-14zM1 4h3v1h-3zM5 4h6v1h-6zM12 4h3v1h-3zM0 5h4v1h-4zM6 5h5v1h-5zM12 5h4v1h-4zM0 6h4v1h-4zM5 6h1v1h-1zM7 6h4v1h-4zM12 6h4v1h-4zM0 7h4v1h-4zM5 7h2v1h-2zM8 7h3v1h-3zM12 7h4v1h-4zM0 8h4v1h-4zM5 8h3v1h-3zM9 8h2v1h-2zM12 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM10 9h1v1h-1zM12 9h4v1h-4zM0 10h4v1h-4zM5 10h5v1h-5zM12 10h4v1h-4zM1 11h3v1h-3zM5 11h6v1h-6zM12 11h3v1h-3zM2 12h12v1h-12zM3 13h10v1h-10zM5 14h6v1h-6z"/><path fill="#ffffff" d="M4 4h1v1h-1zM11 4h1v1h-1zM4 5h2v1h-2zM11 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM11 6h1v1h-1zM4 7h1v1h-1zM7 7h1v1h-1zM11 7h1v1h-1zM4 8h1v1h-1zM8 8h1v1h-1zM11 8h1v1h-1zM4 9h1v1h-1zM9 9h1v1h-1zM11 9h1v1h-1zM4 10h1v1h-1zM10 10h2v1h-2zM4 11h1v1h-1zM11 11h1v1h-1z"/></svg>Next.js 16</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#61dafb" d="M6 2h4v1h-4zM5 3h1v1h-1zM10 3h1v1h-1zM2 4h4v1h-4zM10 4h4v1h-4zM1 5h1v1h-1zM5 5h1v1h-1zM10 5h1v1h-1zM14 5h1v1h-1zM1 6h1v1h-1zM6 6h1v1h-1zM9 6h1v1h-1zM14 6h1v1h-1zM1 7h1v1h-1zM6 7h4v1h-4zM14 7h1v1h-1zM1 8h1v1h-1zM6 8h4v1h-4zM14 8h1v1h-1zM1 9h1v1h-1zM6 9h1v1h-1zM9 9h1v1h-1zM14 9h1v1h-1zM1 10h1v1h-1zM5 10h1v1h-1zM10 10h1v1h-1zM14 10h1v1h-1zM2 11h4v1h-4zM10 11h4v1h-4zM5 12h1v1h-1zM10 12h1v1h-1zM6 13h4v1h-4z"/></svg>React 19</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#38bdf8" d="M2 3h4v1h-4zM10 3h4v1h-4zM1 4h2v1h-2zM5 4h2v1h-2zM9 4h2v1h-2zM13 4h2v1h-2zM1 5h2v1h-2zM6 5h4v1h-4zM13 5h2v1h-2zM1 6h2v1h-2zM7 6h2v1h-2zM13 6h2v1h-2zM2 7h4v1h-4zM10 7h4v1h-4zM4 8h4v1h-4zM12 8h4v1h-4zM3 9h2v1h-2zM7 9h2v1h-2zM11 9h2v1h-2zM15 9h1v1h-1zM3 10h2v1h-2zM8 10h4v1h-4zM15 10h1v1h-1zM3 11h2v1h-2zM9 11h2v1h-2zM15 11h1v1h-1zM4 12h4v1h-4zM12 12h4v1h-4z"/></svg>Tailwind 4</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#7a7a7a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg>Turborepo</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#7a7a7a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg>Zod</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#7a7a7a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg>Keycloak</span></div></div></div>
+        <div style="background:#ffffff;border:3px solid #1d1d1f;box-shadow:5px 5px 0 #1d1d1f;padding:20px"><div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px"><span style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:16px;line-height:1.5;color:#1d1d1f">CUJAE</span><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#0066cc">{{t.role2}}</span><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#7a7a7a">{{t.period2}}</span></div><p style="font-family:VT323, ui-monospace, monospace;font-size:20px;line-height:1.35;margin:0;color:#333333">{{t.body2}}</p><div style="margin-top:20px"><div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#6db33f" d="M12 1h2v1h-2zM10 2h4v1h-4zM8 3h6v1h-6zM6 4h8v1h-8zM5 5h9v1h-9zM4 6h10v1h-10zM3 7h11v1h-11zM3 8h10v1h-10zM2 9h10v1h-10zM2 10h9v1h-9zM2 11h8v1h-8zM2 12h5v1h-5zM2 13h2v1h-2z"/></svg>Spring Boot 3.4</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#e76f00" d="M4 1h1v1h-1zM7 1h1v1h-1zM10 1h1v1h-1zM3 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM4 3h1v1h-1zM7 3h1v1h-1zM10 3h1v1h-1zM3 4h1v1h-1zM6 4h1v1h-1zM9 4h1v1h-1z"/><path fill="#5382a1" d="M1 6h12v1h-12zM1 7h1v1h-1zM12 7h1v1h-1zM14 7h2v1h-2zM1 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM1 9h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM1 10h1v1h-1zM12 10h3v1h-3zM1 11h1v1h-1zM12 11h1v1h-1zM2 12h1v1h-1zM11 12h1v1h-1zM3 13h8v1h-8z"/></svg>Java 21</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#1f8a9c" d="M3 2h10v1h-10zM2 3h1v1h-1zM13 3h1v1h-1zM3 4h10v1h-10zM2 5h1v1h-1zM13 5h1v1h-1zM2 6h1v1h-1zM13 6h1v1h-1zM3 7h10v1h-10zM2 8h1v1h-1zM13 8h1v1h-1zM2 9h1v1h-1zM13 9h1v1h-1zM3 10h10v1h-10zM2 11h1v1h-1zM13 11h1v1h-1zM2 12h1v1h-1zM13 12h1v1h-1zM3 13h10v1h-10z"/></svg>MariaDB</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#7a7a7a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg>Liquibase</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#2496ed" d="M6 1h2v1h-2zM6 2h2v1h-2zM2 3h2v1h-2zM6 3h2v1h-2zM10 3h2v1h-2zM2 4h2v1h-2zM6 4h2v1h-2zM10 4h2v1h-2zM2 5h10v1h-10zM2 6h10v1h-10zM14 6h1v1h-1zM0 7h15v1h-15zM1 8h14v1h-14zM2 9h12v1h-12zM3 10h10v1h-10z"/></svg>Docker</span><span style="display:inline-flex;align-items:center;gap:6px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:2px 2px 0 #1d1d1f;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#1d1d1f"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#009639" d="M1 1h2v1h-2zM13 1h2v1h-2zM1 2h2v1h-2zM13 2h2v1h-2zM1 3h3v1h-3zM13 3h2v1h-2zM1 4h4v1h-4zM13 4h2v1h-2zM1 5h2v1h-2zM4 5h2v1h-2zM13 5h2v1h-2zM1 6h2v1h-2zM5 6h2v1h-2zM13 6h2v1h-2zM1 7h2v1h-2zM6 7h2v1h-2zM13 7h2v1h-2zM1 8h2v1h-2zM7 8h2v1h-2zM13 8h2v1h-2zM1 9h2v1h-2zM8 9h2v1h-2zM13 9h2v1h-2zM1 10h2v1h-2zM9 10h2v1h-2zM13 10h2v1h-2zM1 11h2v1h-2zM10 11h2v1h-2zM13 11h2v1h-2zM1 12h2v1h-2zM11 12h4v1h-4zM1 13h2v1h-2zM12 13h3v1h-3zM1 14h2v1h-2zM13 14h2v1h-2z"/></svg>Nginx</span></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:10px;background-color:#272729;background-image:linear-gradient(45deg,#f5f5f7 25%,transparent 25%,transparent 75%,#f5f5f7 75%),linear-gradient(45deg,#f5f5f7 25%,transparent 25%,transparent 75%,#f5f5f7 75%);background-size:10px 10px;background-position:0 0,5px 5px"></div>
+
+  <div style="background:#272729;padding:72px 40px;color:#ffffff">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;letter-spacing:0.06em;color:#cccccc;margin-bottom:14px">{{t.projKicker}}</div>
+      <h2 style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:22px;font-weight:400;line-height:1.5;margin:0 0 24px;color:#ffffff">LOCAL AI CODING AGENT</h2>
+      <div style="max-width:760px"><p style="font-family:VT323, ui-monospace, monospace;font-size:22px;line-height:1.35;margin:0;color:#cccccc">{{t.projBody}}</p></div>
+      <div style="margin:28px 0 32px"><div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:6px;background:#1d1d1f;border:2px solid #4a4a4c;box-shadow:2px 2px 0 #000000;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#ffffff"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#ff5b11" d="M7 1h2v1h-2zM7 2h2v1h-2zM6 3h4v1h-4zM5 4h6v1h-6zM5 5h6v1h-6zM4 6h8v1h-8zM4 7h3v1h-3zM9 7h4v1h-4zM3 8h3v1h-3zM10 8h4v1h-4zM3 9h2v1h-2zM11 9h3v1h-3zM2 10h3v1h-3zM12 10h3v1h-3zM2 11h3v1h-3zM7 11h2v1h-2zM12 11h3v1h-3zM2 12h3v1h-3zM6 12h4v1h-4zM12 12h3v1h-3zM3 13h11v1h-11zM4 14h9v1h-9z"/></svg>Hono</span><span style="display:inline-flex;align-items:center;gap:6px;background:#1d1d1f;border:2px solid #4a4a4c;box-shadow:2px 2px 0 #000000;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#ffffff"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#ffffff" d="M7 2h2v1h-2zM7 3h2v1h-2zM6 4h4v1h-4zM6 5h4v1h-4zM5 6h6v1h-6zM5 7h6v1h-6zM4 8h8v1h-8zM4 9h8v1h-8zM3 10h10v1h-10zM3 11h10v1h-10zM2 12h12v1h-12zM2 13h12v1h-12z"/></svg>Vercel AI SDK</span><span style="display:inline-flex;align-items:center;gap:6px;background:#1d1d1f;border:2px solid #4a4a4c;box-shadow:2px 2px 0 #000000;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#ffffff"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#9a9a9a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg>MCP</span><span style="display:inline-flex;align-items:center;gap:6px;background:#1d1d1f;border:2px solid #4a4a4c;box-shadow:2px 2px 0 #000000;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#ffffff"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#7fc7e8" d="M12 1h3v1h-3zM10 2h3v1h-3zM9 3h3v1h-3zM7 4h4v1h-4zM6 5h4v1h-4zM4 6h5v1h-5zM3 7h5v1h-5zM2 8h5v1h-5zM1 9h5v1h-5zM2 10h3v1h-3zM3 11h2v1h-2zM4 12h1v1h-1z"/></svg>SQLite</span><span style="display:inline-flex;align-items:center;gap:6px;background:#1d1d1f;border:2px solid #4a4a4c;box-shadow:2px 2px 0 #000000;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#ffffff"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#9a9a9a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg>Drizzle</span><span style="display:inline-flex;align-items:center;gap:6px;background:#1d1d1f;border:2px solid #4a4a4c;box-shadow:2px 2px 0 #000000;padding:5px 8px;font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#ffffff"><svg width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#3178c6" d="M0 0h16v1h-16zM0 1h16v1h-16zM0 2h16v1h-16zM0 3h2v1h-2zM7 3h9v1h-9zM0 4h4v1h-4zM5 4h4v1h-4zM14 4h2v1h-2zM0 5h4v1h-4zM5 5h4v1h-4zM10 5h6v1h-6zM0 6h4v1h-4zM5 6h4v1h-4zM13 6h3v1h-3zM0 7h4v1h-4zM5 7h8v1h-8zM14 7h2v1h-2zM0 8h4v1h-4zM5 8h8v1h-8zM14 8h2v1h-2zM0 9h4v1h-4zM5 9h4v1h-4zM13 9h3v1h-3zM0 10h16v1h-16zM0 11h16v1h-16zM0 12h16v1h-16zM0 13h16v1h-16zM0 14h16v1h-16zM0 15h16v1h-16z"/><path fill="#ffffff" d="M2 3h5v1h-5zM4 4h1v1h-1zM9 4h5v1h-5zM4 5h1v1h-1zM9 5h1v1h-1zM4 6h1v1h-1zM9 6h4v1h-4zM4 7h1v1h-1zM13 7h1v1h-1zM4 8h1v1h-1zM13 8h1v1h-1zM4 9h1v1h-1zM9 9h4v1h-4z"/></svg>TypeScript</span></div></div>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-family:Silkscreen, ui-monospace, monospace;font-size:13px;color:#2997ff">{{t.projLink}}
+        <svg width="12" height="12" viewBox="0 0 12 12" shape-rendering="crispEdges" style="display:block"><path fill="#2997ff" d="M2 0h2v2H2zM4 2h2v2H4zM6 4h2v2H6zM6 6h2v2H6zM4 8h2v2H4zM2 10h2v2H2z"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <div style="height:10px;background-color:#ffffff;background-image:linear-gradient(45deg,#272729 25%,transparent 25%,transparent 75%,#272729 75%),linear-gradient(45deg,#272729 25%,transparent 25%,transparent 75%,#272729 75%);background-size:10px 10px;background-position:0 0,5px 5px"></div>
+
+  <div style="background:#ffffff;padding:72px 40px">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;letter-spacing:0.06em;color:#7a7a7a;margin-bottom:14px">{{t.stackKicker}}</div>
+      <h2 style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:22px;font-weight:400;line-height:1.5;margin:0 0 26px;color:#1d1d1f">{{t.stackHead}}</h2>
+      <div style="display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));gap:12px"><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#3178c6" d="M0 0h16v1h-16zM0 1h16v1h-16zM0 2h16v1h-16zM0 3h2v1h-2zM7 3h9v1h-9zM0 4h4v1h-4zM5 4h4v1h-4zM14 4h2v1h-2zM0 5h4v1h-4zM5 5h4v1h-4zM10 5h6v1h-6zM0 6h4v1h-4zM5 6h4v1h-4zM13 6h3v1h-3zM0 7h4v1h-4zM5 7h8v1h-8zM14 7h2v1h-2zM0 8h4v1h-4zM5 8h8v1h-8zM14 8h2v1h-2zM0 9h4v1h-4zM5 9h4v1h-4zM13 9h3v1h-3zM0 10h16v1h-16zM0 11h16v1h-16zM0 12h16v1h-16zM0 13h16v1h-16zM0 14h16v1h-16zM0 15h16v1h-16z"/><path fill="#ffffff" d="M2 3h5v1h-5zM4 4h1v1h-1zM9 4h5v1h-5zM4 5h1v1h-1zM9 5h1v1h-1zM4 6h1v1h-1zM9 6h4v1h-4zM4 7h1v1h-1zM13 7h1v1h-1zM4 8h1v1h-1zM13 8h1v1h-1zM4 9h1v1h-1zM9 9h4v1h-4z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">TypeScript</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#e76f00" d="M4 1h1v1h-1zM7 1h1v1h-1zM10 1h1v1h-1zM3 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM4 3h1v1h-1zM7 3h1v1h-1zM10 3h1v1h-1zM3 4h1v1h-1zM6 4h1v1h-1zM9 4h1v1h-1z"/><path fill="#5382a1" d="M1 6h12v1h-12zM1 7h1v1h-1zM12 7h1v1h-1zM14 7h2v1h-2zM1 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM1 9h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM1 10h1v1h-1zM12 10h3v1h-3zM1 11h1v1h-1zM12 11h1v1h-1zM2 12h1v1h-1zM11 12h1v1h-1zM3 13h8v1h-8z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">Java</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#61dafb" d="M6 2h4v1h-4zM5 3h1v1h-1zM10 3h1v1h-1zM2 4h4v1h-4zM10 4h4v1h-4zM1 5h1v1h-1zM5 5h1v1h-1zM10 5h1v1h-1zM14 5h1v1h-1zM1 6h1v1h-1zM6 6h1v1h-1zM9 6h1v1h-1zM14 6h1v1h-1zM1 7h1v1h-1zM6 7h4v1h-4zM14 7h1v1h-1zM1 8h1v1h-1zM6 8h4v1h-4zM14 8h1v1h-1zM1 9h1v1h-1zM6 9h1v1h-1zM9 9h1v1h-1zM14 9h1v1h-1zM1 10h1v1h-1zM5 10h1v1h-1zM10 10h1v1h-1zM14 10h1v1h-1zM2 11h4v1h-4zM10 11h4v1h-4zM5 12h1v1h-1zM10 12h1v1h-1zM6 13h4v1h-4z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">React</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#1d1d1f" d="M5 0h6v1h-6zM3 1h10v1h-10zM2 2h12v1h-12zM1 3h14v1h-14zM1 4h3v1h-3zM5 4h6v1h-6zM12 4h3v1h-3zM0 5h4v1h-4zM6 5h5v1h-5zM12 5h4v1h-4zM0 6h4v1h-4zM5 6h1v1h-1zM7 6h4v1h-4zM12 6h4v1h-4zM0 7h4v1h-4zM5 7h2v1h-2zM8 7h3v1h-3zM12 7h4v1h-4zM0 8h4v1h-4zM5 8h3v1h-3zM9 8h2v1h-2zM12 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM10 9h1v1h-1zM12 9h4v1h-4zM0 10h4v1h-4zM5 10h5v1h-5zM12 10h4v1h-4zM1 11h3v1h-3zM5 11h6v1h-6zM12 11h3v1h-3zM2 12h12v1h-12zM3 13h10v1h-10zM5 14h6v1h-6z"/><path fill="#ffffff" d="M4 4h1v1h-1zM11 4h1v1h-1zM4 5h2v1h-2zM11 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM11 6h1v1h-1zM4 7h1v1h-1zM7 7h1v1h-1zM11 7h1v1h-1zM4 8h1v1h-1zM8 8h1v1h-1zM11 8h1v1h-1zM4 9h1v1h-1zM9 9h1v1h-1zM11 9h1v1h-1zM4 10h1v1h-1zM10 10h2v1h-2zM4 11h1v1h-1zM11 11h1v1h-1z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">Next.js</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#38bdf8" d="M2 3h4v1h-4zM10 3h4v1h-4zM1 4h2v1h-2zM5 4h2v1h-2zM9 4h2v1h-2zM13 4h2v1h-2zM1 5h2v1h-2zM6 5h4v1h-4zM13 5h2v1h-2zM1 6h2v1h-2zM7 6h2v1h-2zM13 6h2v1h-2zM2 7h4v1h-4zM10 7h4v1h-4zM4 8h4v1h-4zM12 8h4v1h-4zM3 9h2v1h-2zM7 9h2v1h-2zM11 9h2v1h-2zM15 9h1v1h-1zM3 10h2v1h-2zM8 10h4v1h-4zM15 10h1v1h-1zM3 11h2v1h-2zM9 11h2v1h-2zM15 11h1v1h-1zM4 12h4v1h-4zM12 12h4v1h-4z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">Tailwind</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#6db33f" d="M12 1h2v1h-2zM10 2h4v1h-4zM8 3h6v1h-6zM6 4h8v1h-8zM5 5h9v1h-9zM4 6h10v1h-10zM3 7h11v1h-11zM3 8h10v1h-10zM2 9h10v1h-10zM2 10h9v1h-9zM2 11h8v1h-8zM2 12h5v1h-5zM2 13h2v1h-2z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">Spring Boot</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#7a7a7a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">NestJS</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#336791" d="M3 1h10v1h-10zM2 2h12v1h-12zM1 3h14v1h-14zM1 4h2v1h-2zM4 4h8v1h-8zM13 4h2v1h-2zM1 5h14v1h-14zM1 6h14v1h-14zM2 7h12v1h-12zM3 8h10v1h-10zM4 9h3v1h-3zM9 9h3v1h-3zM4 10h3v1h-3zM9 10h4v1h-4zM4 11h3v1h-3zM11 11h2v1h-2zM4 12h3v1h-3zM11 12h2v1h-2zM11 13h2v1h-2z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">PostgreSQL</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#1f8a9c" d="M3 2h10v1h-10zM2 3h1v1h-1zM13 3h1v1h-1zM3 4h10v1h-10zM2 5h1v1h-1zM13 5h1v1h-1zM2 6h1v1h-1zM13 6h1v1h-1zM3 7h10v1h-10zM2 8h1v1h-1zM13 8h1v1h-1zM2 9h1v1h-1zM13 9h1v1h-1zM3 10h10v1h-10zM2 11h1v1h-1zM13 11h1v1h-1zM2 12h1v1h-1zM13 12h1v1h-1zM3 13h10v1h-10z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">MariaDB</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#2496ed" d="M6 1h2v1h-2zM6 2h2v1h-2zM2 3h2v1h-2zM6 3h2v1h-2zM10 3h2v1h-2zM2 4h2v1h-2zM6 4h2v1h-2zM10 4h2v1h-2zM2 5h10v1h-10zM2 6h10v1h-10zM14 6h1v1h-1zM0 7h15v1h-15zM1 8h14v1h-14zM2 9h12v1h-12zM3 10h10v1h-10z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">Docker</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#009639" d="M1 1h2v1h-2zM13 1h2v1h-2zM1 2h2v1h-2zM13 2h2v1h-2zM1 3h3v1h-3zM13 3h2v1h-2zM1 4h4v1h-4zM13 4h2v1h-2zM1 5h2v1h-2zM4 5h2v1h-2zM13 5h2v1h-2zM1 6h2v1h-2zM5 6h2v1h-2zM13 6h2v1h-2zM1 7h2v1h-2zM6 7h2v1h-2zM13 7h2v1h-2zM1 8h2v1h-2zM7 8h2v1h-2zM13 8h2v1h-2zM1 9h2v1h-2zM8 9h2v1h-2zM13 9h2v1h-2zM1 10h2v1h-2zM9 10h2v1h-2zM13 10h2v1h-2zM1 11h2v1h-2zM10 11h2v1h-2zM13 11h2v1h-2zM1 12h2v1h-2zM11 12h4v1h-4zM1 13h2v1h-2zM12 13h3v1h-3zM1 14h2v1h-2zM13 14h2v1h-2z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">Nginx</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:#ffffff;border:2px solid #1d1d1f;box-shadow:3px 3px 0 #1d1d1f;padding:14px 8px"><svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;flex-shrink:0"><path fill="#7a7a7a" d="M7 3h2v1h-2zM6 4h4v1h-4zM5 5h2v1h-2zM9 5h2v1h-2zM4 6h2v1h-2zM10 6h2v1h-2zM3 7h2v1h-2zM11 7h2v1h-2zM3 8h2v1h-2zM11 8h2v1h-2zM4 9h2v1h-2zM10 9h2v1h-2zM5 10h2v1h-2zM9 10h2v1h-2zM6 11h4v1h-4zM7 12h2v1h-2z"/></svg><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#1d1d1f;text-align:center;line-height:1.3">GH Actions</span></div></div>
+
+      <div style="margin-top:44px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:26px">
+        <div style="background:#ffffff;border:3px solid #1d1d1f;box-shadow:5px 5px 0 #1d1d1f;padding:20px"><div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;letter-spacing:0.06em;color:#7a7a7a;margin-bottom:14px">{{t.eduKicker}}</div><div style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:14px;line-height:1.6;color:#1d1d1f;margin-bottom:14px">{{t.eduDegree}}</div><p style="font-family:VT323, ui-monospace, monospace;font-size:21px;line-height:1.35;margin:0;color:#333333">{{t.eduSchool}}</p><div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#7a7a7a;margin-top:14px">{{t.eduYear}}</div></div>
+        <div style="background:#ffffff;border:3px solid #1d1d1f;box-shadow:5px 5px 0 #1d1d1f;padding:20px"><div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;letter-spacing:0.06em;color:#7a7a7a;margin-bottom:14px">{{t.awardKicker}}</div><div style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:14px;line-height:1.6;color:#1d1d1f;margin-bottom:14px">{{t.awardTitle}}</div><p style="font-family:VT323, ui-monospace, monospace;font-size:21px;line-height:1.35;margin:0;color:#333333">{{t.awardWhere}}</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:10px;background-color:#252527;background-image:linear-gradient(45deg,#ffffff 25%,transparent 25%,transparent 75%,#ffffff 75%),linear-gradient(45deg,#ffffff 25%,transparent 25%,transparent 75%,#ffffff 75%);background-size:10px 10px;background-position:0 0,5px 5px"></div>
+
+  <div style="background:#252527;padding:72px 40px;color:#ffffff">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;letter-spacing:0.06em;color:#cccccc;margin-bottom:14px">{{t.contactKicker}}</div>
+      <h2 style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:22px;font-weight:400;line-height:1.55;margin:0 0 36px;max-width:800px;color:#ffffff">{{t.contactHead}}</h2>
+      <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 44px;margin-bottom:40px"><div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:2px solid #3a3a3c"><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#cccccc">{{t.labelEmail}}</span><span style="font-family:VT323, ui-monospace, monospace;font-size:22px;color:#2997ff;text-align:right">pendragonn89@gmail.com</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:2px solid #3a3a3c"><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#cccccc">{{t.labelPhone}}</span><span style="font-family:VT323, ui-monospace, monospace;font-size:22px;color:#ffffff;text-align:right">+53 55393216</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:2px solid #3a3a3c"><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#cccccc">GITHUB</span><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#7a7a7a;text-align:right">[github.com/usuario]</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:2px solid #3a3a3c"><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#cccccc">LINKEDIN</span><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#7a7a7a;text-align:right">[linkedin.com/in/perfil]</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:2px solid #3a3a3c"><span style="font-family:Silkscreen, ui-monospace, monospace;font-size:10px;color:#cccccc">{{t.labelLangs}}</span><span style="font-family:VT323, ui-monospace, monospace;font-size:22px;color:#ffffff;text-align:right">{{t.langsValue}}</span></div></div>
+      <span style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;background:#0066cc;color:#ffffff;border:3px solid #ffffff;box-shadow:4px 4px 0 #000000;font-family:'Press Start 2P', ui-monospace, monospace;font-size:10px;line-height:1.6">{{t.contactCta}}</span>
+    </div>
+  </div>
+
+  <div style="height:10px;background-color:#f5f5f7;background-image:linear-gradient(45deg,#252527 25%,transparent 25%,transparent 75%,#252527 75%),linear-gradient(45deg,#252527 25%,transparent 25%,transparent 75%,#252527 75%);background-size:10px 10px;background-position:0 0,5px 5px"></div>
+
+  <div style="background:#f5f5f7;padding:52px 40px">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:26px">
+        <div>
+          <div style="font-family:'Press Start 2P', ui-monospace, monospace;font-size:12px;line-height:1.7;color:#1d1d1f;margin-bottom:12px">EDUARDO MAZZOLA</div>
+          <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:12px;color:#7a7a7a">{{t.footerLocation}}</div>
+        </div>
+        <div style="display:flex;gap:26px">
+          <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#333333">{{t.navExp}}</span>
+          <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#333333">{{t.navProj}}</span>
+          <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#333333">{{t.navStack}}</span>
+          <span style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#333333">{{t.navContact}}</span>
+        </div>
+      </div>
+      <div style="height:3px;background:#1d1d1f;margin-bottom:20px"></div>
+      <div style="font-family:Silkscreen, ui-monospace, monospace;font-size:11px;color:#7a7a7a">{{t.footerLegal}}</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":3200}}'>
+var PILL_BASE = 'display:flex;align-items:center;justify-content:center;font-family:Silkscreen, ui-monospace, monospace;font-size:12px;border:2px solid #ffffff;cursor:pointer;';
+var PILL_ON = PILL_BASE + 'background:#0066cc;color:#ffffff;box-shadow:2px 2px 0 #000000;';
+var PILL_OFF = PILL_BASE + 'background:#1d1d1f;color:#7a7a7a;box-shadow:2px 2px 0 #000000;';
+
+var COPY = {
+  es: {
+    navExp: 'EXPERIENCIA',
+    navProj: 'PROYECTOS',
+    navStack: 'STACK',
+    navContact: 'CONTACTO',
+    heroKicker: 'LA HABANA, CUBA / REMOTO',
+    heroFullName: 'Eduardo Marcelo Mazzola Fernandez',
+    heroTagline: 'Construyo interfaces dentro de arquitecturas de micro-frontends, con recorrido full stack en Spring Boot y Clean Architecture.',
+    ctaPrimary: 'VER PROYECTOS',
+    ctaSecondary: 'DESCARGAR CV',
+    expKicker: 'TRAYECTORIA',
+    expHead: 'DONDE HE TRABAJADO',
+    role1: 'DESARROLLADOR FRONTEND',
+    period1: '[MES AAAA - ACTUAL]',
+    body1: 'Frontend de eTravelBeyond, plataforma de viajes con micro-frontends Multi-Zones sobre un monorepo TypeScript. Paquetes internos de UI, autenticacion y navegacion compartidos entre aplicaciones, SSO con Keycloak y feature flags para liberar por partes.',
+    role2: 'PROGRAMADOR FULL STACK',
+    period2: '[MES AAAA - MES AAAA]',
+    body2: 'Sobrecarga Docente, sistema de gestion de carga academica del profesorado, construido de extremo a extremo: Clean Architecture en el backend, migraciones versionadas y la aplicacion completa empaquetada en contenedores.',
+    projKicker: 'PROYECTO PROPIO',
+    projBody: 'Linea de comandos que orquesta modelos de lenguaje ejecutandose 100 % en local, sin depender de APIs externas. Model Context Protocol para exponer herramientas al modelo, persistencia en SQLite y una interfaz de terminal propia.',
+    projLink: 'VER EL REPOSITORIO',
+    stackKicker: 'HERRAMIENTAS',
+    stackHead: 'CON QUE CONSTRUYO',
+    eduKicker: 'FORMACION',
+    eduDegree: 'INGENIERIA INFORMATICA',
+    eduSchool: 'Universidad Tecnologica de La Habana Jose Antonio Echeverria',
+    eduYear: '[ANO DE GRADUACION]',
+    awardKicker: 'RECONOCIMIENTO',
+    awardTitle: '3.er LUGAR - COPA EULER 2025',
+    awardWhere: 'Hackathon celebrado en la CUJAE',
+    contactKicker: 'CONTACTO',
+    contactHead: 'HABLEMOS DE TU PROXIMO PRODUCTO',
+    labelEmail: 'CORREO',
+    labelPhone: 'TELEFONO',
+    labelLangs: 'IDIOMAS',
+    langsValue: 'Espanol nativo / Ingles B1',
+    contactCta: 'ESCRIBEME',
+    footerLocation: 'La Habana, Cuba / Disponible en remoto',
+    footerLegal: 'Ultima actualizacion: [FECHA]'
+  },
+  en: {
+    navExp: 'EXPERIENCE',
+    navProj: 'PROJECTS',
+    navStack: 'STACK',
+    navContact: 'CONTACT',
+    heroKicker: 'HAVANA, CUBA / REMOTE',
+    heroFullName: 'Eduardo Marcelo Mazzola Fernandez',
+    heroTagline: 'I build interfaces inside micro-frontend architectures, with full stack experience in Spring Boot and Clean Architecture.',
+    ctaPrimary: 'SEE PROJECTS',
+    ctaSecondary: 'DOWNLOAD CV',
+    expKicker: 'TRACK RECORD',
+    expHead: 'WHERE I HAVE WORKED',
+    role1: 'FRONTEND DEVELOPER',
+    period1: '[MONTH YYYY - PRESENT]',
+    body1: 'Frontend for eTravelBeyond, a travel platform built on Multi-Zones micro-frontends inside a TypeScript monorepo. Shared internal packages for UI, authentication and navigation across apps, SSO through Keycloak, and feature flags for staged releases.',
+    role2: 'FULL STACK DEVELOPER',
+    period2: '[MONTH YYYY - MONTH YYYY]',
+    body2: 'Sobrecarga Docente, an academic workload management system for university faculty, built end to end: Clean Architecture on the backend, versioned migrations, and the whole application shipped in containers.',
+    projKicker: 'PERSONAL PROJECT',
+    projBody: 'A command-line tool that orchestrates language models running entirely on the local machine, with no external APIs. Model Context Protocol exposes tools to the model, SQLite handles persistence, and it ships with its own terminal interface.',
+    projLink: 'VIEW THE REPOSITORY',
+    stackKicker: 'TOOLING',
+    stackHead: 'WHAT I BUILD WITH',
+    eduKicker: 'EDUCATION',
+    eduDegree: 'COMPUTER ENGINEERING',
+    eduSchool: 'Universidad Tecnologica de La Habana Jose Antonio Echeverria',
+    eduYear: '[GRADUATION YEAR]',
+    awardKicker: 'RECOGNITION',
+    awardTitle: '3RD PLACE - COPA EULER 2025',
+    awardWhere: 'Hackathon held at CUJAE',
+    contactKicker: 'CONTACT',
+    contactHead: 'LET US TALK ABOUT YOUR NEXT PRODUCT',
+    labelEmail: 'EMAIL',
+    labelPhone: 'PHONE',
+    labelLangs: 'LANGUAGES',
+    langsValue: 'Native Spanish / English B1',
+    contactCta: 'GET IN TOUCH',
+    footerLocation: 'Havana, Cuba / Available for remote work',
+    footerLegal: 'Last updated: [DATE]'
+  }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lang: 'es' };
+  }
+  renderVals() {
+    var lang = this.state.lang === 'en' ? 'en' : 'es';
+    var self = this;
+    return {
+      t: COPY[lang],
+      esStyle: lang === 'es' ? PILL_ON : PILL_OFF,
+      enStyle: lang === 'en' ? PILL_ON : PILL_OFF,
+      setEs: function () { self.setState({ lang: 'es' }); },
+      setEn: function () { self.setState({ lang: 'en' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
