@@ -49,9 +49,6 @@ const navLinks = [
         </li>
       ))
     }
-    <li>
-      <span class="locale-pill pending" title={t.moreLanguagesLabel} aria-hidden="true">+</span>
-    </li>
   </ul>
 </nav>
 
@@ -128,15 +125,6 @@ const navLinks = [
     color: var(--color-on-dark);
   }
 
-  .locale-pill.pending {
-    border-style: dashed;
-    border-color: var(--pixel-border-dark);
-    background: transparent;
-    box-shadow: none;
-    padding: 0 11px;
-    color: var(--color-ink-muted-48);
-  }
-
   @media (min-width: 1068px) {
     .site-nav {
       gap: 24px;
@@ -156,10 +144,6 @@ const navLinks = [
       min-height: 0;
       height: 34px;
       padding: 0 12px;
-    }
-
-    .locale-pill.pending {
-      padding: 0 10px;
     }
   }
 </style>

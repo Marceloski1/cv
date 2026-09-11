@@ -31,7 +31,10 @@ const { t } = Astro.props;
     </ul>
 
     <div class="stack-meta">
-      <PixelBox>
+      <PixelBox class="edu-box">
+        <div class="edu-logo">
+          <PixelLogo name="cujae" size={44} />
+        </div>
         <Kicker>{t.eduKicker}</Kicker>
         <h3 class="meta-title">{t.eduDegree}</h3>
         <BodyText size="compact">{t.eduSchool}</BodyText>
@@ -109,6 +112,24 @@ const { t } = Astro.props;
     border-top: 2px solid var(--hairline);
   }
 
+  :global(.edu-box) {
+    position: relative;
+  }
+
+  :global(.edu-box .kicker) {
+    padding-right: 60px;
+  }
+
+  .edu-logo {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  :global(.edu-box) .meta-title {
+    padding-right: 60px;
+  }
+
   .meta-title {
     font-family: var(--font-pixel);
     font-size: 11px;
@@ -159,6 +180,24 @@ const { t } = Astro.props;
     .meta-note {
       font-size: 11px;
       margin-top: 14px;
+    }
+
+    .edu-logo {
+      top: 20px;
+      right: 20px;
+    }
+
+    .edu-logo :global(img) {
+      width: 52px;
+      height: 52px;
+    }
+
+    :global(.edu-box .kicker) {
+      padding-right: 68px;
+    }
+
+    :global(.edu-box) .meta-title {
+      padding-right: 68px;
     }
   }
 </style>

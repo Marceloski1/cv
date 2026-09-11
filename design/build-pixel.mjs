@@ -14,6 +14,9 @@ const IMAGE_LOGO_DATA = Object.fromEntries(
     .map((file) => [file.slice(0, -extname(file).length), readFileSync(join(IMAGE_LOGOS_DIR, file)).toString('base64')])
 );
 
+const PHOTO_DATA = readFileSync(join(OUT, '..', 'src', 'assets', 'img', 'me.webp')).toString('base64');
+const PHOTO_SRC = 'data:image/webp;base64,' + PHOTO_DATA;
+
 function logo(name, size, overrides) {
   if (IMAGE_LOGO_DATA[name]) {
     return '<img src="data:image/png;base64,' + IMAGE_LOGO_DATA[name] +
@@ -139,8 +142,20 @@ function pixelBox(inner, dark) {
   const border = dark ? '#4a4a4c' : INK;
   const bg = dark ? '#1d1d1f' : '#ffffff';
   const shadow = dark ? '#000000' : INK;
-  return '<div style="background:' + bg + ';border:3px solid ' + border +
+  return '<div style="position:relative;background:' + bg + ';border:3px solid ' + border +
     ';box-shadow:5px 5px 0 ' + shadow + ';padding:20px">' + inner + '</div>';
+}
+
+function eduLogo(size) {
+  return '<div style="position:absolute;top:16px;right:16px">' +
+    logo('cujae', size) + '</div>';
+}
+
+function photoFrame(maxWidth) {
+  const style = 'display:block;border:3px solid #ffffff;box-shadow:5px 5px 0 #000000' +
+    (maxWidth ? ';max-width:' + maxWidth + 'px;margin:0 5px 28px 0' : '');
+  return '<div style="' + style + '"><img src="' + PHOTO_SRC +
+    '" style="display:block;width:100%;height:auto" alt=""></div>';
 }
 
 function button(labelHole, primary, dark) {
@@ -289,9 +304,10 @@ class Component extends DCLogic {
 </html>
 `;
 
-function kicker(hole, dark) {
+function kicker(hole, dark, paddingRight) {
   return '<div style="font-family:' + F_LABEL + ';font-size:11px;letter-spacing:0.06em;color:' +
-    (dark ? '#cccccc' : MUTED) + ';margin-bottom:14px">' + hole + '</div>';
+    (dark ? '#cccccc' : MUTED) + ';margin-bottom:14px' +
+    (paddingRight ? ';padding-right:' + paddingRight + 'px' : '') + '">' + hole + '</div>';
 }
 
 function heading(hole, size, dark) {
@@ -371,13 +387,13 @@ function mobile() {
     <div style="display:flex;align-items:center;gap:8px">
       <span style="{{esStyle}}min-height:44px;padding:0 13px" onClick="{{setEs}}">ES</span>
       <span style="{{enStyle}}min-height:44px;padding:0 13px" onClick="{{setEn}}">EN</span>
-      <span style="display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 11px;border:2px dashed #4a4a4c;font-family:${F_LABEL};font-size:12px;color:${MUTED}">+</span>
     </div>
   </div>
 
   ${dither(TILE, '#000000')}
 
   <div style="background:${TILE};padding:44px 22px 52px;color:#ffffff">
+    ${photoFrame(480)}
     ${kicker('{{t.heroKicker}}', true)}
     <h1 style="font-family:${F_PIXEL};font-size:26px;font-weight:400;line-height:1.35;margin:0 0 16px;color:#ffffff">EDUARDO<br>MAZZOLA</h1>
     <div style="font-family:${F_LABEL};font-size:11px;color:#cccccc;margin-bottom:22px">{{t.heroFullName}}</div>
@@ -420,8 +436,9 @@ function mobile() {
 
     <div style="margin-top:34px;display:flex;flex-direction:column;gap:18px">
       ${pixelBox(
-        kicker('{{t.eduKicker}}', false) +
-        '<div style="font-family:' + F_PIXEL + ';font-size:11px;line-height:1.6;color:' + INK + ';margin-bottom:12px">{{t.eduDegree}}</div>' +
+        eduLogo(44) +
+        kicker('{{t.eduKicker}}', false, 60) +
+        '<div style="padding-right:60px;font-family:' + F_PIXEL + ';font-size:11px;line-height:1.6;color:' + INK + ';margin-bottom:12px">{{t.eduDegree}}</div>' +
         body('{{t.eduSchool}}', false, 19) +
         '<div style="font-family:' + F_LABEL + ';font-size:10px;color:' + MUTED + ';margin-top:12px">{{t.eduYear}}</div>',
         false
@@ -471,22 +488,24 @@ function desktop() {
     <div style="display:flex;align-items:center;gap:8px">
       <span style="{{esStyle}}height:34px;padding:0 12px" onClick="{{setEs}}">ES</span>
       <span style="{{enStyle}}height:34px;padding:0 12px" onClick="{{setEn}}">EN</span>
-      <span style="display:flex;align-items:center;justify-content:center;height:34px;padding:0 10px;border:2px dashed #4a4a4c;font-family:${F_LABEL};font-size:12px;color:${MUTED}">+</span>
     </div>
   </div>
 
   ${dither(TILE, '#000000')}
 
   <div style="background:${TILE};padding:72px 40px 80px;color:#ffffff">
-    <div style="max-width:1080px;margin:0 auto">
-      ${kicker('{{t.heroKicker}}', true)}
-      <h1 style="font-family:${F_PIXEL};font-size:48px;font-weight:400;line-height:1.35;margin:0 0 22px;color:#ffffff">EDUARDO<br>MAZZOLA</h1>
-      <div style="font-family:${F_LABEL};font-size:14px;color:#cccccc;margin-bottom:26px">{{t.heroFullName}}</div>
-      <p style="font-family:${F_BODY};font-size:27px;line-height:1.3;margin:0 0 36px;max-width:760px;color:#ffffff">{{t.heroTagline}}</p>
-      <div style="display:flex;flex-wrap:wrap;gap:18px">
-        ${button('{{t.ctaPrimary}}', true, true)}
-        ${button('{{t.ctaSecondary}}', false, true)}
+    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0, 1.1fr) minmax(0, 0.9fr);align-items:center;gap:56px">
+      <div>
+        ${kicker('{{t.heroKicker}}', true)}
+        <h1 style="font-family:${F_PIXEL};font-size:48px;font-weight:400;line-height:1.35;margin:0 0 22px;color:#ffffff">EDUARDO<br>MAZZOLA</h1>
+        <div style="font-family:${F_LABEL};font-size:14px;color:#cccccc;margin-bottom:26px">{{t.heroFullName}}</div>
+        <p style="font-family:${F_BODY};font-size:27px;line-height:1.3;margin:0 0 36px;max-width:760px;color:#ffffff">{{t.heroTagline}}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:18px">
+          ${button('{{t.ctaPrimary}}', true, true)}
+          ${button('{{t.ctaSecondary}}', false, true)}
+        </div>
       </div>
+      ${photoFrame()}
     </div>
   </div>
 
@@ -527,8 +546,9 @@ function desktop() {
 
       <div style="margin-top:44px;display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:26px">
         ${pixelBox(
-          kicker('{{t.eduKicker}}', false) +
-          '<div style="font-family:' + F_PIXEL + ';font-size:14px;line-height:1.6;color:' + INK + ';margin-bottom:14px">{{t.eduDegree}}</div>' +
+          eduLogo(52) +
+          kicker('{{t.eduKicker}}', false, 68) +
+          '<div style="padding-right:68px;font-family:' + F_PIXEL + ';font-size:14px;line-height:1.6;color:' + INK + ';margin-bottom:14px">{{t.eduDegree}}</div>' +
           body('{{t.eduSchool}}', false, 21) +
           '<div style="font-family:' + F_LABEL + ';font-size:11px;color:' + MUTED + ';margin-top:14px">{{t.eduYear}}</div>',
           false

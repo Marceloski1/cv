@@ -27,3 +27,4 @@ pnpm-debug.log*
 
 # local agent tooling cache
 .atl/
+.playwright-mcp/

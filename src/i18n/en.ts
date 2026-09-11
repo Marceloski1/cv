@@ -7,7 +7,6 @@ export const en: Dictionary = {
     'CV of Eduardo Marcelo Mazzola Fernandez, a frontend developer working in micro-frontend architectures with full stack experience.',
   skipToContent: 'Skip to content',
   languageNavLabel: 'Language',
-  moreLanguagesLabel: 'More languages coming',
 
   navExp: 'EXPERIENCE',
   navProj: 'PROJECTS',
@@ -18,6 +17,7 @@ export const en: Dictionary = {
   heroFullName: 'Eduardo Marcelo Mazzola Fernandez',
   heroTagline:
     'I build interfaces inside micro-frontend architectures, with full stack experience and Clean Architecture.',
+  heroPhotoAlt: 'Pixel-art portrait of Eduardo working at his laptop',
   ctaPrimary: 'SEE PROJECTS',
   ctaSecondary: 'DOWNLOAD CV',
   // TODO(cv): point to the English CV once it exists
@@ -46,7 +46,7 @@ export const en: Dictionary = {
   stackHead: 'WHAT I BUILD WITH',
 
   eduKicker: 'EDUCATION',
-  eduDegree: 'COMPUTER ENGINEERING',
+  eduDegree: 'COMPUTER ENGINEER',
   eduSchool: 'Universidad Tecnologica de La Habana Jose Antonio Echeverria',
   eduYear: '[GRADUATION YEAR]',
 

@@ -4,6 +4,7 @@ import BodyText from '../atoms/BodyText.astro';
 import PixelButton from '../atoms/PixelButton.astro';
 import { heroNameLines, sectionIds } from '../../data/cv';
 import type { Dictionary } from '../../i18n/types';
+import photo from '../../assets/img/me.webp';
 
 interface Props {
   t: Dictionary;
@@ -13,20 +14,33 @@ const { t } = Astro.props;
 ---
 
 <section class="tile tile-dark hero">
-  <div class="tile-inner">
-    <Kicker onDark>{t.heroKicker}</Kicker>
-    <h1 class="hero-name">
-      {heroNameLines[0]}<br />{heroNameLines[1]}
-    </h1>
-    <p class="hero-full-name">{t.heroFullName}</p>
-    <BodyText onDark size="lead" constrained>{t.heroTagline}</BodyText>
-    <div class="hero-actions">
-      <PixelButton href={`#${sectionIds.project}`} variant="primary" onDark>
-        {t.ctaPrimary}
-      </PixelButton>
-      <PixelButton href={t.cvDownload.href} download={t.cvDownload.fileName} variant="ghost" onDark>
-        {t.ctaSecondary}
-      </PixelButton>
+  <div class="tile-inner hero-grid">
+    <div class="hero-text">
+      <Kicker onDark>{t.heroKicker}</Kicker>
+      <h1 class="hero-name">
+        {heroNameLines[0]}<br />{heroNameLines[1]}
+      </h1>
+      <p class="hero-full-name">{t.heroFullName}</p>
+      <BodyText onDark size="lead" constrained>{t.heroTagline}</BodyText>
+      <div class="hero-actions">
+        <PixelButton href={`#${sectionIds.project}`} variant="primary" onDark>
+          {t.ctaPrimary}
+        </PixelButton>
+        <PixelButton href={t.cvDownload.href} download={t.cvDownload.fileName} variant="ghost" onDark>
+          {t.ctaSecondary}
+        </PixelButton>
+      </div>
+    </div>
+    <div class="hero-photo-frame">
+      <img
+        src={photo.src}
+        width={photo.width}
+        height={photo.height}
+        alt={t.heroPhotoAlt}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
     </div>
   </div>
 </section>
@@ -35,6 +49,31 @@ const { t } = Astro.props;
   .hero {
     padding-top: 44px;
     padding-bottom: 52px;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-text {
+    order: 2;
+  }
+
+  .hero-photo-frame {
+    order: 1;
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 5px 28px 0;
+    border: 3px solid var(--color-on-dark);
+    box-shadow: 5px 5px 0 var(--surface-black);
+  }
+
+  .hero-photo-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .hero-name {
@@ -66,12 +105,33 @@ const { t } = Astro.props;
     .hero-name {
       font-size: 34px;
     }
+
+    .hero-photo-frame {
+      max-width: 560px;
+    }
   }
 
   @media (min-width: 1068px) {
     .hero {
       padding-top: 72px;
       padding-bottom: 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      gap: 56px;
+    }
+
+    .hero-text {
+      order: initial;
+    }
+
+    .hero-photo-frame {
+      order: initial;
+      max-width: none;
+      margin: 0;
     }
 
     .hero-name {

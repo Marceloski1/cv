@@ -2,12 +2,13 @@
 interface Props {
   dark?: boolean;
   as?: 'div' | 'article' | 'li';
+  class?: string;
 }
 
-const { dark = false, as: Tag = 'div' }: Props = Astro.props;
+const { dark = false, as: Tag = 'div', class: className }: Props = Astro.props;
 ---
 
-<Tag class:list={['pixel-box', { dark }]}>
+<Tag class:list={['pixel-box', className, { dark }]}>
   <slot />
 </Tag>
 

@@ -8,7 +8,6 @@ export interface Dictionary {
   documentDescription: string;
   skipToContent: string;
   languageNavLabel: string;
-  moreLanguagesLabel: string;
 
   navExp: string;
   navProj: string;
@@ -18,6 +17,7 @@ export interface Dictionary {
   heroKicker: string;
   heroFullName: string;
   heroTagline: string;
+  heroPhotoAlt: string;
   ctaPrimary: string;
   ctaSecondary: string;
   cvDownload: { href: string; fileName: string };
