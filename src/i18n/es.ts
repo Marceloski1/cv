@@ -1,7 +1,6 @@
 import type { Dictionary } from './types';
 
 export const es: Dictionary = {
-  htmlLang: 'es',
   localeName: 'Espanol',
   documentTitle: 'Eduardo Mazzola / Desarrollador Frontend',
   documentDescription:

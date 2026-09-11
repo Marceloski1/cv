@@ -298,7 +298,7 @@ function expCard(company, roleHole, periodHole, bodyHole, chips, nameSize) {
   );
 }
 
-function contactRows(dark, valueSize) {
+function contactRows(valueSize) {
   const rows = [
     ['{{t.labelEmail}}', 'pendragonn89@gmail.com', SKY, F_BODY, valueSize],
     ['{{t.labelPhone}}', '+53 55393216', '#ffffff', F_BODY, valueSize],
@@ -395,7 +395,7 @@ function mobile() {
   <div style="background:${TILE3};padding:52px 22px;color:#ffffff">
     ${kicker('{{t.contactKicker}}', true)}
     <h2 style="font-family:${F_PIXEL};font-size:15px;font-weight:400;line-height:1.55;margin:0 0 28px;color:#ffffff">{{t.contactHead}}</h2>
-    <div style="margin-bottom:32px">${contactRows(true, 20)}</div>
+    <div style="margin-bottom:32px">${contactRows(20)}</div>
     ${button('{{t.contactCta}}', true, true)}
   </div>
 
@@ -509,7 +509,7 @@ function desktop() {
     <div style="max-width:1080px;margin:0 auto">
       ${kicker('{{t.contactKicker}}', true)}
       <h2 style="font-family:${F_PIXEL};font-size:22px;font-weight:400;line-height:1.55;margin:0 0 36px;max-width:800px;color:#ffffff">{{t.contactHead}}</h2>
-      <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 44px;margin-bottom:40px">${contactRows(true, 22)}</div>
+      <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:0 44px;margin-bottom:40px">${contactRows(22)}</div>
       ${button('{{t.contactCta}}', true, true)}
     </div>
   </div>

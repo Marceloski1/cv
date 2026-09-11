@@ -4,7 +4,7 @@ interface Props {
   as?: 'div' | 'article' | 'li';
 }
 
-const { dark = false, as: Tag = 'div' } = Astro.props;
+const { dark = false, as: Tag = 'div' }: Props = Astro.props;
 ---
 
 <Tag class:list={['pixel-box', { dark }]}>

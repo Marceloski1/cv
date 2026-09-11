@@ -3,7 +3,6 @@ import localeConfig from './locales.json';
 export type Locale = (typeof localeConfig.locales)[number];
 
 export interface Dictionary {
-  htmlLang: string;
   localeName: string;
   documentTitle: string;
   documentDescription: string;
